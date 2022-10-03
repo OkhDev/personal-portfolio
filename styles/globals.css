@@ -2,7 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-	font-family: "CoreSans";
-	src: url(../fonts/CoreSans-Regular.otf);
+@layer base {
+	@font-face {
+		font-family: "CoreSans";
+		src: url(/fonts/CoreSans-Light.otf);
+		font-weight: 300;
+	}
+	@font-face {
+		font-family: "CoreSans";
+		src: url(/fonts/CoreSans-Regular.otf);
+		font-weight: 400;
+	}
+	@font-face {
+		font-family: "CorseSans";
+		src: url(/fonts/CoreSans-Bold.otf);
+		font-weight: 500;
+	}
+	@font-face {
+		font-family: "CorseSans";
+		src: url(/fonts/CoreSans-ExtraBold.otf);
+		font-weight: 700;
+	}
+	html {
+		font-family: "CoreSans";
+	}
 }

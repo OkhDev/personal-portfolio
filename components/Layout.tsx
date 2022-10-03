@@ -3,7 +3,7 @@ import Navbar from "./Navbar"
 
 function Layout({ children }: React.PropsWithChildren<{}>) {
 	return (
-		<div className='flex flex-col justify-between h-screen bg-shortener-100 text-shortener-400'>
+		<div className='flex flex-col'>
 			<Navbar />
 			{children}
 			<Footer />

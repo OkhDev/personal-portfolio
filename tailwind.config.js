@@ -7,8 +7,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				display: [],
-				body: [],
+				sans: ["CoreSans"],
 			},
 		},
 	},
