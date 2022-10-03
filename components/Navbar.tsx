@@ -8,18 +8,11 @@ function Navbar() {
 
 	return (
 		<nav className='flex items-center justify-between w-full px-12 py-8 mx-auto tracking-wide max-w-7xl'>
-			<div className='text-4xl font-extrabold cursor-pointer'>
-				short
-				<span className='text-transparent bg-gradient-to-br from-shortener-200 to-shortener-300 bg-clip-text'>
-					linx
-				</span>
-			</div>
+			<div className='text-3xl font-extrabold cursor-pointer'>OkhDev</div>
 			<div className='items-center hidden space-x-6 font-medium cursor-pointer md:inline-flex text-md'>
-				<h3>Home</h3>
-				<h3>About</h3>
-				<button className='px-4 py-2 text-white rounded-full bg-gradient-to-br from-shortener-200 to-shortener-300'>
-					More Apps
-				</button>
+				{NavLinks.map((nav) => (
+					<h3 key={nav.id}>{nav.title}</h3>
+				))}
 			</div>
 			<div className='flex items-center justify-end flex-1 md:hidden'>
 				<div
@@ -48,6 +41,9 @@ function Navbar() {
 						))}
 					</ul>
 				</div>
+			</div>
+			<div>
+				<a className='text-lg font-bold cursor-pointer'>Get In Touch</a>
 			</div>
 		</nav>
 	)

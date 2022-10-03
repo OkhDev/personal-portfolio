@@ -2,16 +2,16 @@ import { SVGProps } from "react"
 
 export const NavLinks = [
 	{
-		id: "home",
-		title: "Home",
-	},
-	{
 		id: "about",
 		title: "About",
 	},
 	{
-		id: "more",
-		title: "More Apps",
+		id: "portfolio",
+		title: "Portfolio",
+	},
+	{
+		id: "testimonial",
+		title: "Testimonial",
 	},
 ]
 
