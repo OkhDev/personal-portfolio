@@ -6,9 +6,12 @@ module.exports = {
 	],
 	theme: {
 		extend: {
-			fontFamily: {
-				sans: ["CoreSans"],
+			colors: {
+				purple: "#8873EF",
 			},
+		},
+		fontFamily: {
+			body: ["CoreSans", "sans-serif"],
 		},
 	},
 	plugins: [],

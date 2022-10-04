@@ -7,11 +7,11 @@ function Navbar() {
 	const [toggle, setToggle] = useState<Boolean>(false)
 
 	return (
-		<nav className='flex items-center justify-between w-full px-12 py-8 mx-auto tracking-wide max-w-7xl z-50 select-none'>
-			<div className='text-2xl font-bold cursor-pointer uppercase '>
+		<nav className='flex items-center justify-between w-full px-12 py-8 mx-auto tracking-wide select-none'>
+			<div className='text-2xl cursor-pointer uppercase font-extrabold'>
 				okhdev
 			</div>
-			<div className='items-center hidden space-x-10 cursor-pointer md:inline-flex text-md'>
+			<div className='items-center hidden space-x-10 cursor-pointer md:inline-flex'>
 				{NavLinks.map((nav) => (
 					<h3 key={nav.id}>{nav.title}</h3>
 				))}
@@ -26,26 +26,24 @@ function Navbar() {
 				<div
 					className={`${
 						toggle ? "flex" : "hidden"
-					} p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-lg z-20`}
+					} p-6 bg-black-gradient absolute top-[6.5rem] right-0 py-20 w-full z-20 `}
 				>
 					<ul className='flex flex-col items-center justify-end flex-1 list-none select-none'>
 						{NavLinks.map((nav, index) => (
-							<li
-								key={nav.id}
-								className={`font-normal cursor-pointer text-[16px] text-slate-600 ${
-									index === NavLinks.length - 1
-										? "mr-0"
-										: "mb-4"
-								}`}
-							>
+							<li key={nav.id} className='cursor-pointer pb-10'>
 								<a href={`#${nav.id}`}>{nav.title}</a>
 							</li>
 						))}
+						<li>
+							<a href='/' className='cursor-pointer'>
+								Get In Touch
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>
 			<div>
-				<a className='text-medium font-bold cursor-pointer'>
+				<a className='hidden md:inline-flex font-medium cursor-pointer px-6 py-3 text-white rounded-xl bg-purple'>
 					Get In Touch
 				</a>
 			</div>

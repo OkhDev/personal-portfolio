@@ -5,23 +5,38 @@
 @layer base {
 	@font-face {
 		font-family: "CoreSans";
-		src: url(/fonts/CoreSans-Light.otf);
+		src: url(/fonts/CoreSans-Light.otf) format("opentype");
 		font-weight: 300;
+		font-style: normal;
+		font-display: swap;
 	}
 	@font-face {
 		font-family: "CoreSans";
-		src: url(/fonts/CoreSans-Regular.otf);
+		src: url(/fonts/CoreSans-Regular.otf) format("opentype");
 		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
 	}
 	@font-face {
-		font-family: "CorseSans";
-		src: url(/fonts/CoreSans-Bold.otf);
+		font-family: "CoreSans";
+		src: url(/fonts/CoreSans-Medium.otf) format("opentype");
 		font-weight: 500;
+		font-style: normal;
+		font-display: swap;
 	}
 	@font-face {
-		font-family: "CorseSans";
-		src: url(/fonts/CoreSans-ExtraBold.otf);
+		font-family: "CoreSans";
+		src: url(/fonts/CoreSans-Bold.otf) format("opentype");
 		font-weight: 700;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "CoreSans";
+		src: url(/fonts/CoreSans-ExtraBold.otf) format("opentype");
+		font-weight: 800;
+		font-style: normal;
+		font-display: swap;
 	}
 	html {
 		font-family: "CoreSans";
