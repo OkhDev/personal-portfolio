@@ -14,7 +14,7 @@ function Navbar() {
 		<nav className='flex items-center justify-between w-full px-6 md:px-12 py-8 mx-auto tracking-wide select-none'>
 			<div className='text-3xl cursor-pointer font-extrabold'>
 				Okhtenberg
-				<span className='text-purple text-4xl'>.</span>
+				<span className='text-flatpurple text-4xl'>.</span>
 			</div>
 			<div className='align-middle hidden space-x-10 cursor-pointer md:inline-flex'>
 				{NavLinks.map((nav) => (

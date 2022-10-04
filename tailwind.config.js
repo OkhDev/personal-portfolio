@@ -11,8 +11,11 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				purple: "#8873EF",
 				offwhite: "#EDEDED",
+				flatgray: "#4B4A4E",
+				flatpurple: "#8873EF",
+				flatorange: "#FE481C",
+				flatblue: "#5562FF",
 			},
 		},
 	},
