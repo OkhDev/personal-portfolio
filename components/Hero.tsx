@@ -3,7 +3,7 @@ import { ArrowRightIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline"
 const Hero = () => {
 	return (
 		<div className='relative flex-grow flex items-center px-8 md:px-12'>
-			<div className='flex flex-col -mt-36 flex-grow'>
+			<div className='flex flex-col -mt-24 flex-grow'>
 				<div className='text-flatpurple font-body font-medium text-2xl  -rotate-12 w-max'>
 					Hello!
 				</div>
