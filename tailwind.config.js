@@ -8,10 +8,12 @@ module.exports = {
 		extend: {
 			colors: {
 				purple: "#8873EF",
+				offwhite: "#EDEDED",
 			},
 		},
 		fontFamily: {
 			body: ["CoreSans", "sans-serif"],
+			header: ["Janna", "sans-serif"],
 		},
 	},
 	plugins: [],

@@ -1,6 +1,10 @@
 import React from "react"
 import { useState } from "react"
-import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/outline"
+import {
+	ArrowUpRightIcon,
+	Bars3BottomRightIcon,
+	XMarkIcon,
+} from "@heroicons/react/24/outline"
 import { NavLinks } from "../constants"
 
 function Navbar() {
@@ -8,8 +12,9 @@ function Navbar() {
 
 	return (
 		<nav className='flex items-center justify-between w-full px-12 py-8 mx-auto tracking-wide select-none'>
-			<div className='text-2xl cursor-pointer uppercase font-extrabold'>
-				okhdev
+			<div className='text-3xl cursor-pointer font-extrabold'>
+				Okhtenberg
+				<span className='text-purple text-3xl ml-0.5'>.</span>
 			</div>
 			<div className='items-center hidden space-x-10 cursor-pointer md:inline-flex'>
 				{NavLinks.map((nav) => (
@@ -26,7 +31,7 @@ function Navbar() {
 				<div
 					className={`${
 						toggle ? "flex" : "hidden"
-					} p-6 bg-black-gradient absolute top-[6.5rem] right-0 py-20 w-full z-20 `}
+					} p-6 bg-black-gradient absolute top-[6.5rem] right-0 py-20 w-full z-20`}
 				>
 					<ul className='flex flex-col items-center justify-end flex-1 list-none select-none'>
 						{NavLinks.map((nav, index) => (
@@ -42,9 +47,13 @@ function Navbar() {
 					</ul>
 				</div>
 			</div>
+
 			<div>
-				<a className='hidden md:inline-flex font-medium cursor-pointer px-6 py-3 text-white rounded-xl bg-purple'>
-					Get In Touch
+				<a className='hidden md:inline-flex font-medium cursor-pointer px-7 py-4 rounded-3xl bg-offwhite items-center'>
+					<span className='mt-[0.15rem]'>Resume</span>
+					<span className='w-[1.25rem] ml-3'>
+						<ArrowUpRightIcon className='stroke-[2px]' />
+					</span>
 				</a>
 			</div>
 		</nav>

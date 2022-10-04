@@ -38,7 +38,13 @@
 		font-style: normal;
 		font-display: swap;
 	}
-	html {
+	@font-face {
+		font-family: "Janna";
+		src: url(/fonts/Janna-Bold.ttf) format("truetype");
+		font-style: normal;
+		font-display: swap;
+	}
+	* {
 		font-family: "CoreSans";
 	}
 }
