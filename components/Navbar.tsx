@@ -1,9 +1,9 @@
 import React from "react"
 import { useState } from "react"
 import {
-	ArrowUpRightIcon,
 	Bars3BottomRightIcon,
 	XMarkIcon,
+	PaperAirplaneIcon,
 } from "@heroicons/react/24/outline"
 import { NavLinks } from "../constants"
 
@@ -11,7 +11,7 @@ function Navbar() {
 	const [toggle, setToggle] = useState<Boolean>(false)
 
 	return (
-		<nav className='flex items-center justify-between w-full px-6 md:px-12 py-8 mx-auto tracking-wide select-none'>
+		<nav className='flex items-center justify-between w-full px-6 md:px-12 py-8 mx-auto tracking-wide select-none z-20'>
 			<div className='text-3xl cursor-pointer font-header'>
 				Okhtenberg
 				<span className='text-flatpurple font-extrabold text-4xl ml-0.5'>
@@ -33,7 +33,7 @@ function Navbar() {
 				<div
 					className={`${
 						toggle ? "flex" : "hidden"
-					} p-6 bg-black-gradient absolute top-[6.5rem] right-0 py-20 w-full z-20 bg-offwhite`}
+					} p-6 bg-black-gradient absolute top-[6.5rem] right-0 py-12 w-full z-10 bg-white drop-shadow-lg`}
 				>
 					<ul className='flex flex-col items-center justify-end flex-1 list-none select-none'>
 						{NavLinks.map((nav, index) => (
@@ -43,7 +43,7 @@ function Navbar() {
 						))}
 						<li>
 							<a href='/' className='cursor-pointer'>
-								Resume
+								Let's Talk
 							</a>
 						</li>
 					</ul>
@@ -52,9 +52,9 @@ function Navbar() {
 
 			<div>
 				<a className='hidden md:inline-flex font-medium cursor-pointer px-6 py-3.5 rounded-3xl bg-offwhite items-center'>
-					<span className='mt-[0.15rem]'>Resume</span>
+					<span className='pt-[0.15rem]'>Let's Talk</span>
 					<span className='w-[1.25rem] ml-3'>
-						<ArrowUpRightIcon className='stroke-[2px]' />
+						<PaperAirplaneIcon className='stroke-[2px]' />
 					</span>
 				</a>
 			</div>
