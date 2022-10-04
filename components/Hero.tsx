@@ -14,20 +14,20 @@ const Hero = () => {
 					<span className='text-flatgray'>Web Developer</span> &{" "}
 					<span className='text-flatgray'>Graphic Designer</span>
 				</div>
-				<div className='flex space-x-2 my-8 md:my-12'>
-					<div className='flex-initial w-12'>&#11834;</div>
-					<div className='text-flatgray font-light'>
+				<div className='flex space-x-2 my-10'>
+					<div className='flex-initial w-12 mt-1'>&#11834;</div>
+					<div className='text-flatgray font-light leading-loose'>
 						I love to build. I am a life long learner and have a
 						desire for some good pizza.
 					</div>
 				</div>
-				<div className='mt-12'>
+				<div className='mt-10'>
 					<a
 						href='/'
 						className='text-base bg-flatpurple px-8 py-6 rounded-3xl items-center '
 					>
 						<span className='mt-[0.2rem] text-white inline-flex'>
-							Portfolio{" "}
+							Portfolio
 							<ArrowUpRightIcon className='stroke-white stroke-[2px] w-5 ml-2' />
 						</span>
 					</a>

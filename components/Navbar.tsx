@@ -25,10 +25,14 @@ function Navbar() {
 			</div>
 			<div className='flex justify-end flex-1 md:hidden'>
 				<div
-					className='w-[2.5rem] h-[2.5rem] object-contain cursor-pointer'
+					className='w-8 object-contain cursor-pointer'
 					onClick={() => setToggle((prev) => !prev)}
 				>
-					{toggle ? <XMarkIcon /> : <Bars3BottomRightIcon />}
+					{toggle ? (
+						<XMarkIcon className='stroke-2' />
+					) : (
+						<Bars3BottomRightIcon className='stroke-2' />
+					)}
 				</div>
 				<div
 					className={`${
