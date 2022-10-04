@@ -11,7 +11,8 @@ const Hero = () => {
 					I am Ariel Okhtenberg
 				</div>
 				<div className='text-lg md:text-xl text-flatgray'>
-					<span>Web Developer</span> & <span>Graphic Designer</span>
+					<span className='text-flatgray'>Web Developer</span> &{" "}
+					<span className='text-flatgray'>Graphic Designer</span>
 				</div>
 				<div className='flex space-x-2 my-8 md:my-12'>
 					<div className='flex-initial w-12'>&#11834;</div>
@@ -20,7 +21,7 @@ const Hero = () => {
 						desire for some good pizza.
 					</div>
 				</div>
-				<div className='mt-8'>
+				<div className='mt-12'>
 					<a
 						href='/'
 						className='text-base bg-flatpurple px-8 py-6 rounded-3xl items-center '
