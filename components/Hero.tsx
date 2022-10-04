@@ -1,13 +1,14 @@
 import { ArrowRightIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline"
+import { Links } from "../constants"
 
 const Hero = () => {
 	return (
 		<div className='relative flex-grow flex items-center px-8 md:px-12'>
-			<div className='flex flex-col -mt-32 flex-grow'>
+			<div className='flex flex-col -mt-12 flex-grow'>
 				<div className='text-flatpurple font-body font-medium text-2xl  -rotate-12 w-max'>
 					Hello!
 				</div>
-				<div className='font-header text-5xl md:text-6xl lg:text-7xl leading-[3.5rem] mt-2 mb-4'>
+				<div className='font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem] mt-2 mb-4'>
 					I am Ariel Okhtenberg
 				</div>
 				<div className='text-lg md:text-xl text-flatgray'>
@@ -21,17 +22,30 @@ const Hero = () => {
 						desire for some good pizza.
 					</div>
 				</div>
-				<div className='inline-flex mt-10'>
-					<div>
+				<div className='flex flex-col'>
+					<div className='my-10'>
 						<a
 							href='/'
-							className='bg-flatpurple px-8 py-6 rounded-3xl items-center '
+							className='bg-flatpurple px-8 py-5 rounded-3xl items-center w-max'
 						>
 							<span className='mt-[0.2rem] text-white inline-flex'>
 								Portfolio
 								<ArrowUpRightIcon className='stroke-white stroke-[2px] w-5 ml-2' />
 							</span>
 						</a>
+					</div>
+					<div className='inline-flex space-x-4'>
+						{Links.map((item) => (
+							<a
+								key={item.name}
+								target={item.target}
+								href={item.href}
+								className='bg-offwhite px-6 py-5 rounded-3xl items-center'
+							>
+								<span className='sr-only'>{item.name}</span>
+								<item.icon className='w-6' aria-hidden='true' />
+							</a>
+						))}
 					</div>
 				</div>
 			</div>

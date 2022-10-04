@@ -1,12 +1,12 @@
 import { HeartIcon } from "@heroicons/react/24/solid"
-import { FooterLinks } from "../constants"
+import { Links } from "../constants"
 
 export default function Footer() {
 	return (
 		<div className='flex justify-end'>
 			<footer className='py-8 md:py-12 mx-auto max-w-7xl sm:px-6 md:flex items-center md:justify-between px-8 md:px-12 w-full'>
 				<div className='flex justify-center space-x-2 md:order-2'>
-					{FooterLinks.map((item) => (
+					{Links.map((item) => (
 						<a
 							key={item.name}
 							target={item.target}

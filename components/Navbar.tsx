@@ -40,7 +40,7 @@ function Navbar() {
 					} p-6 bg-black-gradient absolute top-[6.5rem] right-0 py-12 w-full z-10 bg-white drop-shadow-lg`}
 				>
 					<ul className='flex flex-col items-center justify-end flex-1 list-none select-none'>
-						{NavLinks.map((nav, index) => (
+						{NavLinks.map((nav) => (
 							<li key={nav.id} className='cursor-pointer pb-10'>
 								<a href={`#${nav.id}`}>{nav.title}</a>
 							</li>
@@ -55,7 +55,7 @@ function Navbar() {
 			</div>
 
 			<div>
-				<a className='hidden md:inline-flex font-medium cursor-pointer px-6 py-3.5 rounded-3xl bg-offwhite items-center'>
+				<a className='hidden md:inline-flex font-medium cursor-pointer px-6 py-3.5 rounded-3xl border-2 border-offwhite items-center'>
 					<span className='pt-[0.15rem]'>Let's Talk</span>
 					<span className='w-[1.25rem] ml-3'>
 						<PaperAirplaneIcon className='stroke-[2px]' />
