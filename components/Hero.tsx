@@ -3,7 +3,7 @@ import { ArrowRightIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline"
 const Hero = () => {
 	return (
 		<div className='relative flex-grow flex items-center px-8 md:px-12'>
-			<div className='flex flex-col -mt-24 flex-grow'>
+			<div className='flex flex-col -mt-32 flex-grow'>
 				<div className='text-flatpurple font-body font-medium text-2xl  -rotate-12 w-max'>
 					Hello!
 				</div>
@@ -21,16 +21,18 @@ const Hero = () => {
 						desire for some good pizza.
 					</div>
 				</div>
-				<div className='mt-10'>
-					<a
-						href='/'
-						className='text-base bg-flatpurple px-8 py-6 rounded-3xl items-center '
-					>
-						<span className='mt-[0.2rem] text-white inline-flex'>
-							Portfolio
-							<ArrowUpRightIcon className='stroke-white stroke-[2px] w-5 ml-2' />
-						</span>
-					</a>
+				<div className='inline-flex mt-10'>
+					<div>
+						<a
+							href='/'
+							className='bg-flatpurple px-8 py-6 rounded-3xl items-center '
+						>
+							<span className='mt-[0.2rem] text-white inline-flex'>
+								Portfolio
+								<ArrowUpRightIcon className='stroke-white stroke-[2px] w-5 ml-2' />
+							</span>
+						</a>
+					</div>
 				</div>
 			</div>
 			<div className='absolute bottom-36 -right-4 w-max rotate-90 text-flatgray font-light inline-flex md:bottom-48 md:right-12 select-none text-sm'>
