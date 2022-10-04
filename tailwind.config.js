@@ -7,7 +7,7 @@ module.exports = {
 	theme: {
 		fontFamily: {
 			body: ["CoreSans", "sans-serif"],
-			header: ["Janna", "sans-serif"],
+			header: ["GalanoGrotesque", "sans-serif"],
 		},
 		extend: {
 			colors: {

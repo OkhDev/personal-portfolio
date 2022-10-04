@@ -12,9 +12,9 @@ function Navbar() {
 
 	return (
 		<nav className='flex items-center justify-between w-full px-6 md:px-12 py-8 mx-auto tracking-wide select-none'>
-			<div className='text-3xl cursor-pointer font-extrabold'>
+			<div className='text-3xl cursor-pointer font-extrabold font-header'>
 				Okhtenberg
-				<span className='text-flatpurple text-4xl'>.</span>
+				<span className='text-flatpurple text-4xl ml-0.5'>.</span>
 			</div>
 			<div className='align-middle hidden space-x-10 cursor-pointer md:inline-flex'>
 				{NavLinks.map((nav) => (
@@ -49,7 +49,7 @@ function Navbar() {
 			</div>
 
 			<div>
-				<a className='hidden md:inline-flex font-medium cursor-pointer px-7 py-4 rounded-3xl bg-offwhite items-center'>
+				<a className='hidden md:inline-flex font-medium cursor-pointer px-6 py-3.5 rounded-3xl bg-offwhite items-center'>
 					<span className='mt-[0.15rem]'>Resume</span>
 					<span className='w-[1.25rem] ml-3'>
 						<ArrowUpRightIcon className='stroke-[2px]' />

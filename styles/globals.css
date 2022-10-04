@@ -39,8 +39,8 @@
 		font-display: swap;
 	}
 	@font-face {
-		font-family: "Janna";
-		src: url(/fonts/Janna-Bold.ttf) format("truetype");
+		font-family: "GalanoGrotesque";
+		src: url(/fonts/GalanoGrotesque-Bold.otf) format("opentype");
 		font-style: normal;
 		font-display: swap;
 	}
