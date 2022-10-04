@@ -2,18 +2,25 @@ import { ArrowRightIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline"
 
 const Hero = () => {
 	return (
-		<div className='relative flex-grow flex items-center px-6 md:px-12'>
+		<div className='relative flex-grow flex items-center px-8 md:px-12'>
 			<div className='flex flex-col -mt-36 flex-grow'>
 				<div className='text-flatpurple font-body font-medium text-2xl  -rotate-12 w-max'>
 					Hello!
 				</div>
-				<div className='font-header text-5xl sm:text-6xl leading-[3.5rem] mt-2 mb-4'>
+				<div className='font-header text-5xl md:text-6xl lg:text-7xl leading-[3.5rem] mt-2 mb-4'>
 					I am Ariel Okhtenberg
 				</div>
-				<div className='text-lg md:text-xl font-light text-flatgray'>
+				<div className='text-lg md:text-xl text-flatgray'>
 					<span>Web Developer</span> & <span>Graphic Designer</span>
 				</div>
-				<div className='mt-24'>
+				<div className='flex space-x-2 my-8 md:my-12'>
+					<div className='flex-initial w-12'>&#11834;</div>
+					<div className='text-flatgray font-light'>
+						I love to build. I am a life long learner and have a
+						desire for some good pizza.
+					</div>
+				</div>
+				<div className='mt-8'>
 					<a
 						href='/'
 						className='text-base bg-flatpurple px-8 py-6 rounded-3xl items-center '
