@@ -16,12 +16,12 @@ function Navbar() {
 				Okhtenberg
 				<span className='text-purple text-3xl ml-0.5'>.</span>
 			</div>
-			<div className='items-center hidden space-x-10 cursor-pointer md:inline-flex'>
+			<div className='align-middle hidden space-x-10 cursor-pointer md:inline-flex'>
 				{NavLinks.map((nav) => (
 					<h3 key={nav.id}>{nav.title}</h3>
 				))}
 			</div>
-			<div className='flex items-center justify-end flex-1 md:hidden'>
+			<div className='flex justify-end flex-1 md:hidden'>
 				<div
 					className='w-[2.5rem] h-[2.5rem] object-contain cursor-pointer'
 					onClick={() => setToggle((prev) => !prev)}
@@ -31,7 +31,7 @@ function Navbar() {
 				<div
 					className={`${
 						toggle ? "flex" : "hidden"
-					} p-6 bg-black-gradient absolute top-[6.5rem] right-0 py-20 w-full z-20`}
+					} p-6 bg-black-gradient absolute top-[6.5rem] right-0 py-20 w-full z-20 bg-offwhite`}
 				>
 					<ul className='flex flex-col items-center justify-end flex-1 list-none select-none'>
 						{NavLinks.map((nav, index) => (
