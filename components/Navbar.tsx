@@ -12,9 +12,11 @@ function Navbar() {
 
 	return (
 		<nav className='flex items-center justify-between w-full px-6 md:px-12 py-8 mx-auto tracking-wide select-none'>
-			<div className='text-3xl cursor-pointer font-extrabold font-header'>
+			<div className='text-3xl cursor-pointer font-header'>
 				Okhtenberg
-				<span className='text-flatpurple text-4xl ml-0.5'>.</span>
+				<span className='text-flatpurple font-extrabold text-4xl ml-0.5'>
+					.
+				</span>
 			</div>
 			<div className='align-middle hidden space-x-10 cursor-pointer md:inline-flex'>
 				{NavLinks.map((nav) => (
