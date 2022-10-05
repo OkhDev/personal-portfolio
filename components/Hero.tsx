@@ -8,17 +8,22 @@ const Hero = () => {
 				<div className='text-flatpurple font-body font-medium text-2xl  -rotate-12 w-max'>
 					Hello!
 				</div>
-				<div className='font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem] mt-2 mb-4'>
-					I am Ariel Okhtenberg
+				<div className='relative mt-2 mb-4'>
+					<span className='font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem] '>
+						I am Ariel Okhtenberg
+						<span className='text-flatpurple font-header text-[3.25rem] md:text-6xl lg:text-7xl'>
+							.
+						</span>
+					</span>
 				</div>
 				<div className='text-lg md:text-xl text-flatgray inline-flex'>
 					<div className='relative w-max'>
-						<span className='text-flatgray'>Web Developer </span>
+						<span className='text-flatgray'>Web Developer</span>
 						<span className='absolute bg-flatpurple/30 h-1 w-full left-0 bottom-0 -z-[1]'></span>
 					</div>
 					&nbsp;&amp;&nbsp;
 					<div className='relative w-max'>
-						<span className='text-flatgray'> Graphic Designer</span>
+						<span className='text-flatgray'>Graphic Designer</span>
 						<span className='absolute bg-flatpurple/30 h-1 w-full left-0 bottom-0 -z-[1]'></span>
 					</div>
 				</div>

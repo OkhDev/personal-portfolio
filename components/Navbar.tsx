@@ -11,7 +11,7 @@ function Navbar() {
 	const [toggle, setToggle] = useState<Boolean>(false)
 
 	return (
-		<nav className='flex items-center justify-between w-full px-6 md:px-12 py-8 mx-auto tracking-wide select-none z-20'>
+		<nav className='sticky top-0 left-0 right-0 flex items-center justify-between w-full px-6 md:px-12 py-6 mx-auto tracking-wide select-none z-20 bg-white'>
 			<div className='text-3xl cursor-pointer font-header'>
 				Okhtenberg
 				<span className='text-flatpurple font-extrabold text-4xl ml-0.5'>
@@ -37,7 +37,7 @@ function Navbar() {
 				<div
 					className={`${
 						toggle ? "flex" : "hidden"
-					} p-6 bg-black-gradient absolute top-[6.5rem] right-0 py-12 w-full z-10 bg-white drop-shadow-lg`}
+					} p-6 bg-black-gradient absolute top-[5.5rem] right-0 py-12 w-full z-10 bg-white drop-shadow-lg`}
 				>
 					<ul className='flex flex-col items-center justify-end flex-1 list-none select-none'>
 						{NavLinks.map((nav) => (
