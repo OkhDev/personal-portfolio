@@ -11,9 +11,16 @@ const Hero = () => {
 				<div className='font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem] mt-2 mb-4'>
 					I am Ariel Okhtenberg
 				</div>
-				<div className='text-lg md:text-xl text-flatgray'>
-					<span className='text-flatgray'>Web Developer</span> &{" "}
-					<span className='text-flatgray'>Graphic Designer</span>
+				<div className='text-lg md:text-xl text-flatgray inline-flex'>
+					<div className='relative w-max'>
+						<span className='text-flatgray'>Web Developer </span>
+						<span className='absolute bg-flatpurple h-[0.15rem] w-full left-0 bottom-0 -z-[1] rounded-sm'></span>
+					</div>
+					&nbsp;&amp;&nbsp;
+					<div className='relative w-max'>
+						<span className='text-flatgray'> Graphic Designer</span>
+						<span className='absolute bg-flatpurple h-[0.15rem] w-full left-0 bottom-0 -z-[1] rounded-sm'></span>
+					</div>
 				</div>
 				<div className='flex space-x-2 my-10'>
 					<div className='flex-initial w-12 mt-1'>&#11834;</div>
@@ -22,7 +29,7 @@ const Hero = () => {
 						desire for some good pizza.
 					</div>
 				</div>
-				<div className='flex flex-col'>
+				<div className='flex flex-col select-none'>
 					<div className='my-10'>
 						<a
 							href='/'
