@@ -4,7 +4,7 @@ import { Links } from "../constants"
 const Hero = () => {
 	return (
 		<div className='relative flex-grow flex items-center px-8 md:px-12'>
-			<div className='flex flex-col -mt-16 flex-grow'>
+			<div className='flex flex-col -mt-8 flex-grow'>
 				<div className='text-flatpurple font-body font-medium text-2xl  -rotate-12 w-max'>
 					Hello!
 				</div>
@@ -62,7 +62,7 @@ const Hero = () => {
 					</div>
 				</div>
 			</div>
-			<div className='absolute bottom-36 -right-4 w-max rotate-90 text-flatgray font-light inline-flex md:bottom-48 md:right-12 select-none text-sm'>
+			<div className='absolute bottom-40 -right-4 w-max rotate-90 text-flatgray font-light inline-flex md:bottom-40 md:right-12 select-none text-sm'>
 				<hr /> Scroll Down <ArrowRightIcon className='ml-4 w-4' />
 			</div>
 		</div>

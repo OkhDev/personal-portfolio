@@ -49,3 +49,8 @@
 		color: #0e0c0b;
 	}
 }
+
+.screen-height {
+	height: 100vh;
+	height: calc(var(--vh, 1vh) * 100);
+}
