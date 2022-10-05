@@ -9,6 +9,12 @@ module.exports = {
 			body: ["CoreSans", "sans-serif"],
 			header: ["GalanoGrotesque", "sans-serif"],
 		},
+		height: (theme) => ({
+			auto: "auto",
+			...theme("spacing"),
+			full: "100%",
+			screen: "calc(var(--vh) * 100)",
+		}),
 		extend: {
 			colors: {
 				offwhite: "#F6F6F6",
