@@ -4,7 +4,7 @@ import { Links } from "../constants"
 const Hero = () => {
 	return (
 		<div className='relative flex-grow flex items-center px-8 md:px-12'>
-			<div className='flex flex-col -mt-12 flex-grow'>
+			<div className='flex flex-col -mt-16 flex-grow'>
 				<div className='text-flatpurple font-body font-medium text-2xl  -rotate-12 w-max'>
 					Hello!
 				</div>
@@ -31,7 +31,7 @@ const Hero = () => {
 					</div>
 				</div>
 				<div className='flex flex-col select-none'>
-					<div className='my-10'>
+					<div className='mb-10 mt-4'>
 						<a
 							href='/'
 							className='bg-flatpurple px-8 py-5 rounded-3xl items-center w-max'
