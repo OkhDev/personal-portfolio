@@ -4,7 +4,7 @@ import { Links } from "../constants"
 const Hero = () => {
 	return (
 		<div className='relative flex-grow flex items-center px-8 md:px-12'>
-			<div className='flex flex-col -mt-12 flex-grow'>
+			<div className='flex flex-col -mt-18 flex-grow'>
 				<div className='text-flatpurple font-body font-medium text-2xl  -rotate-12 w-max'>
 					Hello!
 				</div>
@@ -14,19 +14,20 @@ const Hero = () => {
 				<div className='text-lg md:text-xl text-flatgray inline-flex'>
 					<div className='relative w-max'>
 						<span className='text-flatgray'>Web Developer </span>
-						<span className='absolute bg-flatpurple h-[0.15rem] w-full left-0 bottom-0 -z-[1] rounded-sm'></span>
+						<span className='absolute bg-flatpurple/30 h-1 w-full left-0 bottom-0 -z-[1]'></span>
 					</div>
 					&nbsp;&amp;&nbsp;
 					<div className='relative w-max'>
 						<span className='text-flatgray'> Graphic Designer</span>
-						<span className='absolute bg-flatpurple h-[0.15rem] w-full left-0 bottom-0 -z-[1] rounded-sm'></span>
+						<span className='absolute bg-flatpurple/30 h-1 w-full left-0 bottom-0 -z-[1]'></span>
 					</div>
 				</div>
 				<div className='flex space-x-2 my-10'>
 					<div className='flex-initial w-12 mt-1'>&#11834;</div>
 					<div className='text-flatgray font-light leading-loose'>
-						I love to build. I am a life long learner and have a
-						desire for some good pizza.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+						sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua.
 					</div>
 				</div>
 				<div className='flex flex-col select-none'>
