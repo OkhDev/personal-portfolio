@@ -48,6 +48,9 @@
 		font-family: "CoreSans";
 		color: #0e0c0b;
 	}
+	html {
+		-webkit-tap-highlight-color: transparent;
+	}
 }
 
 .h-screen {

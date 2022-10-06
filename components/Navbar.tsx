@@ -87,7 +87,7 @@ function Navbar() {
 								>
 									<a
 										href={`#${nav.id}`}
-										className='text-xl font-medium'
+										className='text-2xl font-medium'
 									>
 										{nav.title}
 									</a>
@@ -98,7 +98,7 @@ function Navbar() {
 									href=''
 									className='inline-flex font-medium cursor-pointer px-6 py-3.5 rounded-3xl border-2 border-white items-center'
 								>
-									<span className='mt-[0.15rem] text-white text-xl font-medium'>
+									<span className='mt-[0.15rem] text-white text-2xl font-medium'>
 										Let's Talk
 									</span>
 									<PaperAirplaneIcon className='stroke-white ml-3 w-[1.25rem] stroke-[2px]' />
