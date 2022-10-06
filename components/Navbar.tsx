@@ -32,9 +32,17 @@ function Navbar() {
 
 	return (
 		<nav className='sticky top-0 left-0 right-0 flex items-center justify-between w-full px-6 md:px-12 py-6 mx-auto tracking-wide select-none z-20 bg-white'>
-			<div className='text-3xl cursor-pointer font-header'>
-				Okhtenberg
-				<span className='text-flatpurple font-extrabold text-4xl'>
+			<div className='cursor-pointer z-[2]'>
+				<span
+					className={`${toggle && "text-white"} text-3xl font-header`}
+				>
+					Okhtenberg
+				</span>
+				<span
+					className={`${
+						toggle && "text-white"
+					} text-flatpurple font-extrabold text-4xl`}
+				>
 					.
 				</span>
 			</div>
@@ -56,11 +64,11 @@ function Navbar() {
 			</div>
 			<div className='flex justify-end flex-1 md:hidden'>
 				<div
-					className='w-8 object-contain focus:select-none select-none '
+					className='w-8 object-contain focus:select-none select-none z-[2]'
 					onClick={() => setToggle((prev) => !prev)}
 				>
 					{toggle ? (
-						<XMarkIcon className='stroke-2' />
+						<XMarkIcon className='stroke-2 stroke-white' />
 					) : (
 						<Bars3BottomRightIcon className='stroke-2' />
 					)}
@@ -68,16 +76,19 @@ function Navbar() {
 				<div
 					className={`${
 						toggle ? "flex" : "hidden"
-					} p-6 absolute top-[5.5rem] right-0 w-full z-[1] bg-flatpurple drop-shadow-xl h-[calc(100vh_-_5.5rem)] overflow-hidden`}
+					} absolute top-0 right-0 w-full z-[1] bg-flatpurple drop-shadow-xl h-screen`}
 				>
 					<div className='m-auto'>
-						<ul className='flex flex-col items-center justify-end flex-1 list-none select-none space-y-12'>
+						<ul className='flex flex-col items-center justify-end flex-1 list-none select-none space-y-12 mt-4'>
 							{NavLinks.map((nav) => (
 								<li
 									key={nav.id}
 									className='text-white cursor-pointer'
 								>
-									<a href={`#${nav.id}`} className='text-lg'>
+									<a
+										href={`#${nav.id}`}
+										className='text-xl font-medium'
+									>
 										{nav.title}
 									</a>
 								</li>
@@ -87,7 +98,7 @@ function Navbar() {
 									href=''
 									className='inline-flex font-medium cursor-pointer px-6 py-3.5 rounded-3xl border-2 border-white items-center'
 								>
-									<span className='mt-[0.15rem] text-white'>
+									<span className='mt-[0.15rem] text-white text-xl font-medium'>
 										Let's Talk
 									</span>
 									<PaperAirplaneIcon className='stroke-white ml-3 w-[1.25rem] stroke-[2px]' />
@@ -97,7 +108,6 @@ function Navbar() {
 					</div>
 				</div>
 			</div>
-
 			<div className='relative'>
 				<motion.a
 					whileHover={{ borderColor: "#8873EF", scale: 1.05 }}
