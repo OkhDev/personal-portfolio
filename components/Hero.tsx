@@ -11,7 +11,7 @@ const loadVariants = {
 		transition: {
 			duration: 0.8,
 			delayChildren: 0.8,
-			staggerChildren: 0.5,
+			staggerChildren: 0.55,
 		},
 	},
 }
