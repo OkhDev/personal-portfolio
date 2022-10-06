@@ -175,9 +175,7 @@ function Navbar() {
 							<li>
 								<motion.a
 									href=''
-									initial={{ opacity: 0 }}
-									whileInView={{
-										opacity: 100,
+									animate={{
 										rotate: [0, 5, -5, 5, -5, 0],
 									}}
 									transition={{
