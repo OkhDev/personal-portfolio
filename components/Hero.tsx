@@ -6,9 +6,16 @@ const Hero = () => {
 	return (
 		<div className='relative flex-grow flex items-center px-6 md:px-12'>
 			<div className='flex flex-col flex-grow'>
-				<div className='text-flatpurple font-body font-medium text-2xl  -rotate-12 w-max'>
+				<motion.div
+					animate={{
+						rotate: [0, -30, 0, -15, 0, -12],
+						scale: [1.2, 1.0],
+					}}
+					transition={{ duration: 0.8 }}
+					className='text-flatpurple font-body font-medium text-2xl  -rotate-12 w-max'
+				>
 					Hello!
-				</div>
+				</motion.div>
 				<div className='relative mt-2 mb-4'>
 					<div className='font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem]'>
 						I am Ariel Okhtenberg
