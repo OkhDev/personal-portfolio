@@ -8,7 +8,7 @@ const Hero = () => {
 			<div className='flex flex-col flex-grow'>
 				<motion.div
 					animate={{
-						rotate: [0, -30, 0, -15, 0, -12],
+						rotate: [0, -24, 0, -15, 0, -12],
 						scale: [1.2, 1.0],
 					}}
 					transition={{ duration: 0.8 }}
@@ -45,20 +45,21 @@ const Hero = () => {
 				</div>
 				<div className='flex flex-col select-none'>
 					<div className='mb-10 mt-4'>
-						<a
-							href='/'
+						<motion.a
+							whileHover={{ scale: 1.5 }}
+							href=''
 							className='bg-flatpurple px-8 py-5 rounded-3xl items-center w-max'
 						>
 							<span className='mt-[0.2rem] text-white inline-flex'>
 								Portfolio
 								<ArrowUpRightIcon className='stroke-white stroke-[2px] w-5 ml-2' />
 							</span>
-						</a>
+						</motion.a>
 					</div>
 					<div className='inline-flex space-x-4'>
 						{Links.map((item) => (
 							<motion.a
-								whileHover={{}}
+								whileHover={{ scale: 1.05 }}
 								key={item.name}
 								target={item.target}
 								href={item.href}
