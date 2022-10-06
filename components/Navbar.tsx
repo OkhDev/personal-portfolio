@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import {
 	Bars3BottomRightIcon,
 	XMarkIcon,
 	PaperAirplaneIcon,
 } from "@heroicons/react/24/outline"
 import { NavLinks } from "../constants"
-import { motion, SVGMotionProps } from "framer-motion"
+import { motion } from "framer-motion"
 
 const underlineHover = {
 	rest: {
@@ -73,7 +73,7 @@ function Navbar() {
 			</div>
 			<div className='flex justify-end flex-1 md:hidden'>
 				<div
-					className='w-8 object-contain focus:select-none select-none z-[2]'
+					className='w-8 object-contain select-none z-[2]'
 					onClick={() => setToggle((prev) => !prev)}
 				>
 					{toggle ? (
@@ -88,7 +88,7 @@ function Navbar() {
 					} absolute top-0 right-0 w-full z-[1] bg-flatpurple drop-shadow-xl h-screen`}
 				>
 					<div className='m-auto'>
-						<ul className='flex flex-col items-center justify-end flex-1 list-none select-none space-y-12 mt-2'>
+						<ul className='flex flex-col items-center justify-end flex-1 list-none select-none space-y-12'>
 							{NavLinks.map((nav) => (
 								<li
 									key={nav.id}
@@ -119,7 +119,7 @@ function Navbar() {
 			</div>
 			<div className='relative'>
 				<motion.a
-					whileHover={{ borderColor: "#8873EF", scale: 1.05 }}
+					whileHover={{ borderColor: "#8873EF", x: 10 }}
 					href=''
 					className='hidden md:inline-flex font-medium cursor-pointer px-6 py-3.5 rounded-3xl border-2 border-offwhite items-center'
 				>
