@@ -56,7 +56,7 @@ function Navbar() {
 			</div>
 			<div className='flex justify-end flex-1 md:hidden'>
 				<div
-					className='w-8 object-contain focus:select-none select-none'
+					className='w-8 object-contain focus:select-none select-none '
 					onClick={() => setToggle((prev) => !prev)}
 				>
 					{toggle ? (
@@ -68,7 +68,7 @@ function Navbar() {
 				<div
 					className={`${
 						toggle ? "flex" : "hidden"
-					} p-6 absolute top-[5.5rem] right-0 w-full z-10 bg-flatpurple drop-shadow-xl h-[calc(100vh_-_5.5rem)]`}
+					} p-6 absolute top-[5.5rem] right-0 w-full z-[1] bg-flatpurple drop-shadow-xl h-[calc(100vh_-_5.5rem)] overflow-hidden`}
 				>
 					<div className='m-auto'>
 						<ul className='flex flex-col items-center justify-end flex-1 list-none select-none space-y-12'>
