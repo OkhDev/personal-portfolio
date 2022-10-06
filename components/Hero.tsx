@@ -1,9 +1,10 @@
 import { ArrowRightIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline"
 import { Links } from "../constants"
+import { motion } from "framer-motion"
 
 const Hero = () => {
 	return (
-		<div className='relative flex-grow flex items-center px-8 md:px-12'>
+		<div className='relative flex-grow flex items-center px-6 md:px-12'>
 			{/* -mt-8 */}
 			<div className='flex flex-col flex-grow'>
 				<div className='text-flatpurple font-body font-medium text-2xl  -rotate-12 w-max'>
@@ -50,7 +51,8 @@ const Hero = () => {
 					</div>
 					<div className='inline-flex space-x-4'>
 						{Links.map((item) => (
-							<a
+							<motion.a
+								whileHover={{}}
 								key={item.name}
 								target={item.target}
 								href={item.href}
@@ -58,13 +60,13 @@ const Hero = () => {
 							>
 								<span className='sr-only'>{item.name}</span>
 								<item.icon className='w-6' aria-hidden='true' />
-							</a>
+							</motion.a>
 						))}
 					</div>
 				</div>
 			</div>
 			<div className='absolute bottom-40 -right-4 w-max rotate-90 text-flatgray font-light inline-flex md:bottom-40 md:right-12 select-none text-sm'>
-				<hr /> Scroll Down <ArrowRightIcon className='ml-4 w-4' />
+				Scroll Down <ArrowRightIcon className='ml-4 w-4' />
 			</div>
 		</div>
 	)
