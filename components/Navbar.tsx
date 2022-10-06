@@ -77,7 +77,9 @@ function Navbar() {
 									key={nav.id}
 									className='text-white cursor-pointer'
 								>
-									<a href={`#${nav.id}`}>{nav.title}</a>
+									<a href={`#${nav.id}`} className='text-lg'>
+										{nav.title}
+									</a>
 								</li>
 							))}
 							<li>
