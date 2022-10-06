@@ -149,29 +149,29 @@ function Navbar() {
 					</motion.span>
 				</div>
 				{/* NAVIGATION ITEMS */}
-				<motion.div
-					variants={appearMenuVariant}
-					initial={"close"}
-					animate={toggle ? "open" : "close"}
-					className={`flex absolute top-0 right-0 w-full z-[1] h-screen bg-flatpurple`}
-				>
-					<div className='m-auto'>
-						<ul className='flex flex-col items-center justify-end flex-1 list-none select-none space-y-12'>
-							{NavLinks.map((nav) => (
-								<li
-									key={nav.id}
-									className='text-white cursor-pointer'
-								>
-									<a
-										href={`#${nav.id}`}
-										className='text-2xl font-medium'
+				{toggle && (
+					<motion.div
+						variants={appearMenuVariant}
+						initial={"close"}
+						animate={toggle ? "open" : "close"}
+						className={`flex absolute top-0 right-0 w-full z-[1] h-screen bg-flatpurple`}
+					>
+						<div className='m-auto'>
+							<ul className='flex flex-col items-center justify-end flex-1 list-none select-none space-y-12'>
+								{NavLinks.map((nav) => (
+									<li
+										key={nav.id}
+										className='text-white cursor-pointer'
 									>
-										{nav.title}
-									</a>
-								</li>
-							))}
-							<li>
-								{toggle && (
+										<a
+											href={`#${nav.id}`}
+											className='text-2xl font-medium'
+										>
+											{nav.title}
+										</a>
+									</li>
+								))}
+								<li>
 									<motion.a
 										href=''
 										animate={{
@@ -188,11 +188,11 @@ function Navbar() {
 										</span>
 										<PaperAirplaneIcon className='stroke-flatpurple ml-3 stroke-[2.5px] w-6' />
 									</motion.a>
-								)}
-							</li>
-						</ul>
-					</div>
-				</motion.div>
+								</li>
+							</ul>
+						</div>
+					</motion.div>
+				)}
 			</div>
 			{/* RIGHT OF NAVBAR */}
 			<div className='relative'>
