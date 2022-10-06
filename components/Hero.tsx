@@ -11,12 +11,12 @@ const Hero = () => {
 					Hello!
 				</div>
 				<div className='relative mt-2 mb-4'>
-					<span className='font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem] '>
+					<div className='font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem]'>
 						I am Ariel Okhtenberg
-						<span className='text-flatpurple font-header text-[3.25rem] md:text-6xl lg:text-7xl'>
+						<span className='text-flatpurple font-header text-[3.25rem] md:text-6xl lg:text-7xl cursor-pointer'>
 							.
 						</span>
-					</span>
+					</div>
 				</div>
 				<div className='text-lg md:text-xl text-flatgray inline-flex'>
 					<div className='relative w-max'>
