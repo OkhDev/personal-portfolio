@@ -1,5 +1,4 @@
-import React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import {
 	Bars3BottomRightIcon,
 	XMarkIcon,
@@ -29,6 +28,16 @@ const underlineHover = {
 
 function Navbar() {
 	const [toggle, setToggle] = useState<Boolean>(false)
+
+	const handleResize = () => {
+		if (window.innerWidth < 768) {
+			setToggle(false)
+		}
+	}
+
+	useEffect(() => {
+		window.addEventListener("resize", handleResize)
+	})
 
 	return (
 		<nav className='sticky top-0 left-0 right-0 flex items-center justify-between w-full px-6 md:px-12 py-6 mx-auto tracking-wide select-none z-20 bg-white'>
@@ -79,7 +88,7 @@ function Navbar() {
 					} absolute top-0 right-0 w-full z-[1] bg-flatpurple drop-shadow-xl h-screen`}
 				>
 					<div className='m-auto'>
-						<ul className='flex flex-col items-center justify-end flex-1 list-none select-none space-y-12 mt-4'>
+						<ul className='flex flex-col items-center justify-end flex-1 list-none select-none space-y-12 mt-2'>
 							{NavLinks.map((nav) => (
 								<li
 									key={nav.id}
