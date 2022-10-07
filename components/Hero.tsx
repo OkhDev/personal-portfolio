@@ -3,9 +3,6 @@ import { Links } from "../constants"
 import { motion } from "framer-motion"
 
 const loadVariants = {
-	out: {
-		y: 40,
-	},
 	in: {
 		y: 0,
 		transition: {
