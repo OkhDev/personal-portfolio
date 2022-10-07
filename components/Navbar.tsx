@@ -156,7 +156,7 @@ function Navbar() {
 							initial={"close"}
 							animate={toggle ? "open" : "close"}
 							exit={"close"}
-							className={`overflow-x-hidden flex absolute top-0 left-0 w-screen z-[1] h-screen bg-flatpurple`}
+							className='flex absolute top-0 left-0 w-screen z-[1] h-screen bg-flatpurple'
 						>
 							<div className='m-auto'>
 								<ul className='flex flex-col items-center justify-end flex-1 list-none select-none space-y-12'>
