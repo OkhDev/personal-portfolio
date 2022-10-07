@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import React, { useState, useEffect } from "react"
 import {
 	Bars3BottomRightIcon,
 	XMarkIcon,
 	PaperAirplaneIcon,
 } from "@heroicons/react/24/outline"
+import { useLockedBody } from "usehooks-ts"
+
 import { NavLinks } from "../constants"
-import { motion, AnimatePresence } from "framer-motion"
 
 const navTitleVariant = {
 	close: {
@@ -91,11 +93,18 @@ const xMarkIconVariant = {
 
 function Navbar() {
 	const [toggle, setToggle] = useState<Boolean>(false)
+	const [locked, setLocked] = useLockedBody(false)
 
 	const handleResize = () => {
-		if (window.innerWidth < 768) {
+		if (window.innerWidth <= 768) {
 			setToggle(false)
+			setLocked(false)
 		}
+	}
+
+	const triggerToggle = () => {
+		setToggle((prev) => !prev)
+		setLocked(!locked)
 	}
 
 	useEffect(() => {
@@ -103,7 +112,7 @@ function Navbar() {
 	})
 
 	return (
-		<nav className='sticky top-0 left-0 right-0 z-20 flex items-center justify-between w-full px-6 py-6 mx-auto tracking-wide bg-white select-none md:px-12'>
+		<nav className='top-0 left-0 right-0 z-50 flex items-center justify-between w-full px-6 py-6 mx-auto tracking-wide bg-white select-none overflow-x-clip md:px-12'>
 			{/* LEFT OF NAVBAR */}
 			<div className='cursor-pointer z-[2]'>
 				<motion.span
@@ -112,7 +121,6 @@ function Navbar() {
 					animate={`${toggle && "open"}`}
 					className='text-3xl font-header'
 				>
-					{/* ${toggle && "text-white"} */}
 					Okhtenberg
 				</motion.span>
 				<motion.span
@@ -142,11 +150,11 @@ function Navbar() {
 					</motion.a>
 				))}
 			</div>
-			{/* MOBILE MENU */}
+			{/* NAVBAR PAGES */}
 			<div className='flex justify-end flex-1 md:hidden'>
 				<div
 					className='w-8 object-contain select-none z-[2]'
-					onClick={() => setToggle((prev) => !prev)}
+					onClick={() => triggerToggle()}
 				>
 					{/* MOBILE MENU ICONS */}
 					{/* X-MARK ICON */}
@@ -170,7 +178,7 @@ function Navbar() {
 						</motion.span>
 					)}
 				</div>
-				{/* NAVIGATION ITEMS */}
+				{/* MOBILE HAMBURGER MENU */}
 				<AnimatePresence>
 					{toggle && (
 						<motion.div
@@ -178,7 +186,7 @@ function Navbar() {
 							initial={"close"}
 							animate={toggle ? "open" : "close"}
 							exit={"close"}
-							className='flex absolute top-0 left-0 w-screen z-[1] h-screen bg-flatpurple'
+							className='flex absolute top-0 left-0 w-screen z-[1] nav-menu bg-flatpurple'
 						>
 							<div className='m-auto'>
 								<ul className='flex flex-col items-center justify-end flex-1 space-y-12 list-none select-none'>

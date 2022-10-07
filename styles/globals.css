@@ -44,18 +44,34 @@
 		font-style: normal;
 		font-display: swap;
 	}
-	* {
-		font-family: "CoreSans";
-		color: #0e0c0b;
-	}
+}
+
+* {
+	font-family: "CoreSans";
+	color: #0e0c0b;
+
+	-webkit-tap-highlight-color: transparent;
+	-ms-overflow-style: none;
 }
 
 html {
-	-webkit-tap-highlight-color: transparent;
 	scroll-behavior: smooth;
 }
 
+nav {
+	position: -webkit-sticky;
+	position: sticky;
+}
+
+.nav-menu {
+	height: calc(100vh);
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
 .h-screen {
-	height: 100vh;
-	height: calc(var(--vh, 1vh) * 100);
+	height: calc(100vh - 84px);
+	height: calc((var(--vh, 1vh) * 100) - 84px);
 }

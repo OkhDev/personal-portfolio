@@ -1,5 +1,5 @@
 function About() {
-	return <div className='flex flex-col h-screen overflow-x-hidden'>About</div>
+	return <div className='flex flex-col h-screen max-h-screen'>About</div>
 }
 
 export default About

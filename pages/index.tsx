@@ -1,8 +1,9 @@
 import type { NextPage } from "next"
 import Head from "next/head"
-import Header from "../components/Header"
 import About from "../components/About"
+import Navbar from "../components/Navbar"
 import { useEffect } from "react"
+import Hero from "../components/Hero"
 
 const Home: NextPage = () => {
 	useEffect(() => {
@@ -19,7 +20,10 @@ const Home: NextPage = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<Header />
+			<Navbar />
+
+			<Hero />
+
 			{/* <About /> */}
 		</>
 	)
