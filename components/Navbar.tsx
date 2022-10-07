@@ -7,6 +7,20 @@ import {
 import { NavLinks } from "../constants"
 import { motion, AnimatePresence } from "framer-motion"
 
+const navTitleVariant = {
+	close: {
+		transition: {
+			duration: 0.8,
+		},
+	},
+	open: {
+		color: "#fff",
+		transition: {
+			duration: 0.8,
+		},
+	},
+}
+
 const underlineVariant = {
 	rest: {
 		width: 0,
@@ -93,18 +107,19 @@ function Navbar() {
 			{/* LEFT OF NAVBAR */}
 			<div className='cursor-pointer z-[2]'>
 				<motion.span
-					// animate={toggle ? "color:'#fff'" : "color:'#0e0c0b'"}
-					transition={{ duration: 0.4 }}
-					className={`${toggle && "text-white"} text-3xl font-header`}
+					variants={navTitleVariant}
+					initial={"close"}
+					animate={`${toggle && "open"}`}
+					className='text-3xl font-header'
 				>
+					{/* ${toggle && "text-white"} */}
 					Okhtenberg
 				</motion.span>
 				<motion.span
-					animate={toggle ? "color:'#fff'" : "color:'#8873EF'"}
-					transition={{ duration: 0.4 }}
-					className={`${
-						toggle && "text-white"
-					} text-flatpurple font-header text-3xl`}
+					variants={navTitleVariant}
+					initial={"close"}
+					animate={`${toggle && "open"}`}
+					className='text-flatpurple font-header text-3xl'
 				>
 					.
 				</motion.span>
@@ -133,20 +148,26 @@ function Navbar() {
 					onClick={() => setToggle((prev) => !prev)}
 				>
 					{/* MOBILE MENU ICONS */}
-					<motion.span
-						className={`${!toggle && "hidden"}`}
-						variants={xMarkIconVariant}
-						animate={toggle ? "open" : "close"}
-					>
-						<XMarkIcon className='stroke-2 stroke-white' />
-					</motion.span>
-					<motion.span
-						className={`${toggle && "hidden"}`}
-						variants={barsIconVariant}
-						animate={toggle ? "open" : "close"}
-					>
-						<Bars3BottomRightIcon className='stroke-2' />
-					</motion.span>
+					{/* X-MARK ICON */}
+					{toggle && (
+						<motion.span
+							variants={xMarkIconVariant}
+							animate={toggle ? "open" : "close"}
+							exit={"close"}
+						>
+							<XMarkIcon className='stroke-2 stroke-white' />
+						</motion.span>
+					)}
+					{/* HAMBURGER MENU ICON */}
+					{!toggle && (
+						<motion.span
+							variants={barsIconVariant}
+							animate={toggle ? "open" : "close"}
+							exit={"close"}
+						>
+							<Bars3BottomRightIcon className='stroke-2' />
+						</motion.span>
+					)}
 				</div>
 				{/* NAVIGATION ITEMS */}
 				<AnimatePresence>
@@ -180,6 +201,7 @@ function Navbar() {
 												rotate: [0, 5, -5, 5, -5, 0],
 											}}
 											transition={{
+												delay: 1,
 												repeat: Infinity,
 												repeatDelay: 1,
 											}}
