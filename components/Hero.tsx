@@ -9,9 +9,8 @@ const loadVariants = {
 	in: {
 		y: 0,
 		transition: {
-			duration: 0.8,
 			delayChildren: 0.8,
-			staggerChildren: 0.55,
+			staggerChildren: 0.2,
 		},
 	},
 }
@@ -24,6 +23,9 @@ const elementVariants = {
 	in: {
 		y: 0,
 		opacity: "100%",
+		transition: {
+			duration: 0.8,
+		},
 	},
 }
 
@@ -50,7 +52,7 @@ const Hero = () => {
 	return (
 		<div className='relative flex-grow flex items-center px-6 md:px-12'>
 			<motion.div
-				// variants={loadVariants}
+				variants={loadVariants}
 				initial='out'
 				animate='in'
 				className='flex flex-col flex-grow'
