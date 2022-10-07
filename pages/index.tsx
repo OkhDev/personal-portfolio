@@ -1,11 +1,17 @@
 import type { NextPage } from "next"
 import Head from "next/head"
-import Footer from "../components/Footer"
 import Header from "../components/Header"
-import Navbar from "../components/Navbar"
-import Hero from "../components/Hero"
+import About from "../components/About"
+import { useEffect } from "react"
 
 const Home: NextPage = () => {
+	useEffect(() => {
+		document.documentElement.style.setProperty(
+			"--vh",
+			window.innerHeight * 0.01 + "px"
+		)
+	})
+
 	return (
 		<>
 			<Head>
@@ -14,6 +20,7 @@ const Home: NextPage = () => {
 			</Head>
 
 			<Header />
+			{/* <About /> */}
 		</>
 	)
 }
