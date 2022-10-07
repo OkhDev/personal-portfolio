@@ -50,7 +50,7 @@ const Hero = () => {
 	return (
 		<div className='relative flex-grow flex items-center px-6 md:px-12'>
 			<motion.div
-				variants={loadVariants}
+				// variants={loadVariants}
 				initial='out'
 				animate='in'
 				className='flex flex-col flex-grow'
