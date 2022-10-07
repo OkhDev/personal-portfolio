@@ -103,7 +103,7 @@ function Navbar() {
 	})
 
 	return (
-		<nav className='sticky top-0 left-0 right-0 flex items-center justify-between w-full px-6 md:px-12 py-6 mx-auto tracking-wide select-none z-20 bg-white'>
+		<nav className='sticky top-0 left-0 right-0 z-20 flex items-center justify-between w-full px-6 py-6 mx-auto tracking-wide bg-white select-none md:px-12'>
 			{/* LEFT OF NAVBAR */}
 			<div className='cursor-pointer z-[2]'>
 				<motion.span
@@ -119,26 +119,27 @@ function Navbar() {
 					variants={navTitleVariant}
 					initial={"close"}
 					animate={`${toggle && "open"}`}
-					className='text-flatpurple font-header text-3xl'
+					className='text-3xl text-flatpurple font-header'
 				>
 					.
 				</motion.span>
 			</div>
 			{/* MIDDLE OF NAVBAR */}
-			<div className='align-middle hidden space-x-10 cursor-pointer md:inline-flex'>
+			<div className='hidden space-x-10 align-middle cursor-pointer md:inline-flex'>
 				{NavLinks.map((nav) => (
-					<motion.div
+					<motion.a
 						initial='rest'
 						whileHover='hover'
 						animate='rest'
 						className='relative w-max'
+						key={nav.id}
 					>
-						<p key={nav.id}>{nav.title}</p>
+						{nav.title}
 						<motion.span
 							variants={underlineVariant}
 							className='absolute bg-flatpurple/30 h-1 left-0 -bottom-1 -z-[1]'
 						></motion.span>
-					</motion.div>
+					</motion.a>
 				))}
 			</div>
 			{/* MOBILE MENU */}
@@ -180,7 +181,7 @@ function Navbar() {
 							className='flex absolute top-0 left-0 w-screen z-[1] h-screen bg-flatpurple'
 						>
 							<div className='m-auto'>
-								<ul className='flex flex-col items-center justify-end flex-1 list-none select-none space-y-12'>
+								<ul className='flex flex-col items-center justify-end flex-1 space-y-12 list-none select-none'>
 									{NavLinks.map((nav) => (
 										<li
 											key={nav.id}
