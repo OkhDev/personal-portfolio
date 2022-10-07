@@ -28,7 +28,7 @@ const underlineVariant = {
 
 const appearMenuVariant = {
 	close: {
-		x: "100%",
+		x: "100vw",
 		transition: {
 			duration: 0.4,
 			type: "tween",
@@ -149,8 +149,6 @@ function Navbar() {
 					</motion.span>
 				</div>
 				{/* NAVIGATION ITEMS */}
-				{/* ! FIX MOBILE MENU */}
-
 				<motion.div
 					variants={appearMenuVariant}
 					initial={"close"}
