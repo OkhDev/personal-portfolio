@@ -149,50 +149,50 @@ function Navbar() {
 					</motion.span>
 				</div>
 				{/* NAVIGATION ITEMS */}
-				{toggle && (
-					<motion.div
-						variants={appearMenuVariant}
-						initial={"close"}
-						animate={toggle ? "open" : "close"}
-						className={`flex absolute top-0 right-0 w-full z-[1] h-screen bg-flatpurple`}
-					>
-						<div className='m-auto'>
-							<ul className='flex flex-col items-center justify-end flex-1 list-none select-none space-y-12'>
-								{NavLinks.map((nav) => (
-									<li
-										key={nav.id}
-										className='text-white cursor-pointer'
+				{/* ! FIX MOBILE MENU */}
+
+				<motion.div
+					variants={appearMenuVariant}
+					initial={"close"}
+					animate={toggle ? "open" : "close"}
+					className={`flex absolute top-0 right-0 w-full z-[1] h-screen bg-flatpurple`}
+				>
+					<div className='m-auto'>
+						<ul className='flex flex-col items-center justify-end flex-1 list-none select-none space-y-12'>
+							{NavLinks.map((nav) => (
+								<li
+									key={nav.id}
+									className='text-white cursor-pointer'
+								>
+									<a
+										href={`#${nav.id}`}
+										className='text-2xl font-medium'
 									>
-										<a
-											href={`#${nav.id}`}
-											className='text-2xl font-medium'
-										>
-											{nav.title}
-										</a>
-									</li>
-								))}
-								<li>
-									<motion.a
-										href=''
-										animate={{
-											rotate: [0, 5, -5, 5, -5, 0],
-										}}
-										transition={{
-											repeat: Infinity,
-											repeatDelay: 1,
-										}}
-										className='inline-flex font-medium cursor-pointer px-6 py-3.5 rounded-3xl bg-white items-center'
-									>
-										<span className='mt-[0.15rem] text-flatpurple text-2xl font-medium'>
-											Let's Talk
-										</span>
-										<PaperAirplaneIcon className='stroke-flatpurple ml-3 stroke-[2.5px] w-6' />
-									</motion.a>
+										{nav.title}
+									</a>
 								</li>
-							</ul>
-						</div>
-					</motion.div>
-				)}
+							))}
+							<li>
+								<motion.a
+									href=''
+									animate={{
+										rotate: [0, 5, -5, 5, -5, 0],
+									}}
+									transition={{
+										repeat: Infinity,
+										repeatDelay: 1,
+									}}
+									className='inline-flex font-medium cursor-pointer px-6 py-3.5 rounded-3xl bg-white items-center'
+								>
+									<span className='mt-[0.15rem] text-flatpurple text-2xl font-medium'>
+										Let's Talk
+									</span>
+									<PaperAirplaneIcon className='stroke-flatpurple ml-3 stroke-[2.5px] w-6' />
+								</motion.a>
+							</li>
+						</ul>
+					</div>
+				</motion.div>
 			</div>
 			{/* RIGHT OF NAVBAR */}
 			<div className='relative'>

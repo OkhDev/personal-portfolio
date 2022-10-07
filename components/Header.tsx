@@ -11,7 +11,7 @@ const Header = () => {
 	})
 	return (
 		<>
-			<div className='flex flex-col h-screen w-screen'>
+			<div className='flex flex-col h-screen'>
 				<Navbar />
 				<Hero />
 			</div>
