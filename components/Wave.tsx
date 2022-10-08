@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const Wave = () => {
 	return (
-		<div className='relative mt-6 lg:mt-20'>
+		<div className='relative mt-6 md:mt-12 lg:mt-24'>
 			{/* bg-center bg-no-repeat aspect-[1200/300] bg-cover */}
 			<div className='absolute bottom-0 w-full -z-10'>
 				<Image

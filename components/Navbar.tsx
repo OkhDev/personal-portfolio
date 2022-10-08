@@ -1,10 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion"
 import React, { useState, useEffect } from "react"
-import {
-	Bars3BottomRightIcon,
-	XMarkIcon,
-	PaperAirplaneIcon,
-} from "@heroicons/react/24/outline"
+import { PaperAirplaneIcon } from "@heroicons/react/24/outline"
 import { useLockedBody } from "usehooks-ts"
 
 import { NavLinks } from "../constants"
@@ -61,32 +57,26 @@ const appearMenuVariant = {
 	},
 }
 
-const barsIconVariant = {
+const menuIconVariant = {
 	close: {
-		opacity: 1,
+		scale: 1.6,
+		x: -4,
+		rotate: 0,
 		transition: {
-			duration: 0.2,
+			duration: 0.4,
+			type: "tween",
+			ease: "easeIn",
 		},
 	},
 	open: {
-		opacity: 0,
+		scale: 1.6,
+		x: -4,
+		rotate: -180,
+		stroke: "#fff",
 		transition: {
-			duration: 0.2,
-		},
-	},
-}
-
-const xMarkIconVariant = {
-	close: {
-		opacity: 0,
-		transition: {
-			duration: 0.2,
-		},
-	},
-	open: {
-		opacity: 1,
-		transition: {
-			duration: 0.2,
+			duration: 0.4,
+			type: "tween",
+			ease: "easeIn",
 		},
 	},
 }
@@ -119,7 +109,7 @@ function Navbar() {
 					<motion.span
 						variants={navTitleVariant}
 						initial={"close"}
-						animate={`${isOpen && "open"}`}
+						animate={isOpen ? "open" : "close"}
 						className='text-3xl font-header'
 					>
 						Okhtenberg
@@ -127,7 +117,7 @@ function Navbar() {
 					<motion.span
 						variants={navTitleVariant}
 						initial={"close"}
-						animate={`${isOpen && "open"}`}
+						animate={isOpen ? "open" : "close"}
 						className='text-3xl text-flatpurple font-header'
 					>
 						.
@@ -154,30 +144,29 @@ function Navbar() {
 				{/* NAVBAR PAGES */}
 				<div className='flex justify-end flex-1 md:hidden'>
 					<div
-						className='w-8 object-contain select-none z-[2]'
+						className='w-max object-contain select-none z-[2]'
 						onClick={() => triggerToggle()}
 					>
-						{/* MOBILE MENU ICONS */}
-						{/* X-MARK ICON */}
-						{isOpen && (
-							<motion.span
-								variants={xMarkIconVariant}
-								animate={isOpen ? "open" : "close"}
-								exit={"close"}
-							>
-								<XMarkIcon className='stroke-2 stroke-white' />
-							</motion.span>
-						)}
-						{/* HAMBURGER MENU ICON */}
-						{!isOpen && (
-							<motion.span
-								variants={barsIconVariant}
-								animate={isOpen ? "open" : "close"}
-								exit={"close"}
-							>
-								<Bars3BottomRightIcon className='stroke-2' />
-							</motion.span>
-						)}
+						{/* MOBILE HAMBURGER MENU ICON */}
+						<motion.svg
+							variants={menuIconVariant}
+							initial={"close"}
+							animate={isOpen ? "open" : "close"}
+							xmlns='http://www.w3.org/2000/svg'
+							fill='none'
+							viewBox='0 0 24 24'
+							width='24'
+							height='24'
+							stroke-width='2'
+							stroke='currentColor'
+						>
+							<path
+								stroke-linecap='round'
+								stroke-linejoin='round'
+								d='M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+							/>
+						</motion.svg>
+						{/* <ArrowLeftCircleIcon className='stroke-2' /> */}
 					</div>
 					{/* MOBILE HAMBURGER MENU */}
 					<AnimatePresence>
@@ -209,7 +198,7 @@ function Navbar() {
 												href=''
 												animate={{
 													rotate: [
-														0, 5, -5, 5, -5, 0,
+														0, 4, -4, 4, -4, 0,
 													],
 												}}
 												transition={{

@@ -161,7 +161,7 @@ const Hero = () => {
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
-					transition={{ delay: 2.4 }}
+					transition={{ delay: 2.4, duration: 1 }}
 					className='absolute inline-flex text-sm font-light rotate-90 select-none bottom-10 -right-4 w-max text-flatgray md:right-12'
 				>
 					Scroll Down <ArrowRightIcon className='w-4 ml-4' />
