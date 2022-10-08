@@ -146,7 +146,7 @@ const Hero = () => {
 								className='items-center px-6 py-5 bg-offwhite rounded-3xl'
 							>
 								<span className='sr-only'>{item.name}</span>
-								<item.icon className='w-6' aria-hidden='true' />
+								<item.icon aria-hidden='true' />
 							</motion.a>
 						))}
 					</div>

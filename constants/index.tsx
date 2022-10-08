@@ -15,13 +15,52 @@ export const NavLinks = [
 	},
 ]
 
+export const Skills = [
+	{
+		skill: "TypeScript",
+	},
+	{
+		skill: "React",
+	},
+	{
+		skill: "Next.js",
+	},
+	{
+		skill: "Redux",
+	},
+	{
+		skill: "Node.js",
+	},
+	{
+		skill: "jQuery",
+	},
+	{
+		skill: "AWS",
+	},
+	{
+		skill: "Express",
+	},
+	{
+		skill: "MongoDB",
+	},
+	{
+		skill: "SQL",
+	},
+	{
+		skill: "Flask",
+	},
+	{
+		skill: "PHP",
+	},
+]
+
 // Icons from https://iconmonstr.com/
 export const Links = [
 	{
 		name: "LinkedIn",
 		target: "_blank",
 		href: "https://www.linkedin.com/in/arielokh/",
-		icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
+		icon: () => (
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='24'
@@ -36,7 +75,7 @@ export const Links = [
 		name: "GitHub",
 		target: "_blank",
 		href: "https://github.com/OkhDev",
-		icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
+		icon: () => (
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='24'
@@ -51,7 +90,7 @@ export const Links = [
 		name: "Dribbble",
 		target: "_blank",
 		href: "https://dribbble.com/okhtenberg",
-		icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
+		icon: () => (
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='24'
