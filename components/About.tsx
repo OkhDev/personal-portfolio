@@ -50,7 +50,7 @@ function About() {
 								href=''
 								className='items-center px-8 py-5 text-white border-2 border-white bg-lightpurple/50 rounded-3xl w-max'
 							>
-								Read more about me
+								Keep Reading
 								<span className='inline-flex'>
 									<ArrowRightIcon className='w-5 ml-2 stroke-2 stroke-white' />
 								</span>
