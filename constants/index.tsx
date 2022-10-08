@@ -47,10 +47,7 @@ export const Skills = [
 		skill: "SQL",
 	},
 	{
-		skill: "Flask",
-	},
-	{
-		skill: "PHP",
+		skill: "GraphQL",
 	},
 ]
 

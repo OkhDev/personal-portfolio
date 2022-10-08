@@ -62,6 +62,7 @@ const menuIconVariant = {
 		scale: 1.6,
 		x: -4,
 		rotate: 0,
+		stroke: "#8873EF",
 		transition: {
 			duration: 0.4,
 			type: "tween",
@@ -71,7 +72,7 @@ const menuIconVariant = {
 	open: {
 		scale: 1.6,
 		x: -4,
-		rotate: -180,
+		rotate: 180,
 		stroke: "#fff",
 		transition: {
 			duration: 0.4,
@@ -123,6 +124,7 @@ function Navbar() {
 						.
 					</motion.span>
 				</div>
+
 				{/* MIDDLE OF NAVBAR */}
 				<div className='hidden space-x-10 align-middle cursor-pointer md:inline-flex'>
 					{NavLinks.map((nav) => (
@@ -141,6 +143,7 @@ function Navbar() {
 						</motion.a>
 					))}
 				</div>
+
 				{/* NAVBAR PAGES */}
 				<div className='flex justify-end flex-1 md:hidden'>
 					<div
@@ -166,8 +169,8 @@ function Navbar() {
 								d='M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
 							/>
 						</motion.svg>
-						{/* <ArrowLeftCircleIcon className='stroke-2' /> */}
 					</div>
+
 					{/* MOBILE HAMBURGER MENU */}
 					<AnimatePresence>
 						{isOpen && (
@@ -179,7 +182,7 @@ function Navbar() {
 								className='flex absolute top-0 left-0 w-screen z-[1] full-screen bg-gradient-to-t from-flatpurple to-lightpurple'
 							>
 								<div className='m-auto'>
-									<ul className='flex flex-col items-center justify-end flex-1 space-y-12 list-none select-none'>
+									<ul className='flex flex-col items-center justify-end flex-1 gap-12 list-none select-none'>
 										{NavLinks.map((nav) => (
 											<li
 												key={nav.id}
@@ -220,6 +223,7 @@ function Navbar() {
 						)}
 					</AnimatePresence>
 				</div>
+
 				{/* RIGHT OF NAVBAR */}
 				<div className='relative'>
 					<motion.a

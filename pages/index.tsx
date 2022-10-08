@@ -4,7 +4,7 @@ import About from "../components/About"
 import Navbar from "../components/Navbar"
 import { useEffect } from "react"
 import Hero from "../components/Hero"
-import Wave from "../components/Wave"
+import Waves from "../components/Waves"
 
 const Home: NextPage = () => {
 	useEffect(() => {
@@ -25,7 +25,7 @@ const Home: NextPage = () => {
 
 			<Hero />
 
-			<Wave />
+			<Waves />
 
 			<About />
 		</>
