@@ -202,9 +202,9 @@ function Navbar() {
 													],
 												}}
 												transition={{
-													delay: 1,
+													delay: 2,
 													repeat: Infinity,
-													repeatDelay: 1,
+													repeatDelay: 2,
 												}}
 												className='inline-flex font-medium cursor-pointer px-6 py-3.5 rounded-3xl bg-white items-center'
 											>
