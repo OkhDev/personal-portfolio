@@ -1,12 +1,13 @@
 import { ArrowRightIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline"
 import { Links } from "../constants"
 import { motion } from "framer-motion"
+import Wave from "./Wave"
 
-const loadVariants = {
+const loadHeroVariants = {
 	in: {
 		y: 0,
 		transition: {
-			delayChildren: 0.8,
+			delayChildren: 1,
 			staggerChildren: 0.2,
 		},
 	},
@@ -21,7 +22,7 @@ const elementVariants = {
 		y: 0,
 		opacity: "100%",
 		transition: {
-			duration: 0.8,
+			duration: 1,
 		},
 	},
 }
@@ -47,10 +48,10 @@ const subtitleVariants = {
 
 const Hero = () => {
 	return (
-		<div className='z-0 flex flex-col h-screen max-h-screen'>
-			<div className='relative flex items-center flex-1 px-6 md:px-12'>
+		<div className='relative z-10 flex h-screen max-h-screen -mt-6'>
+			<div className='relative flex flex-col items-center flex-1 px-6 m-auto md:px-12 max-w-7xl'>
 				<motion.div
-					variants={loadVariants}
+					variants={loadHeroVariants}
 					initial='out'
 					animate='in'
 					className='flex flex-col flex-grow'
@@ -59,7 +60,7 @@ const Hero = () => {
 						animate={{
 							rotate: [0, -24, 0, -15, 0, -12],
 							scale: [1.4, 1.0],
-							transition: { duration: 0.8 },
+							transition: { duration: 1 },
 						}}
 						transition={{ duration: 0.8 }}
 						className='text-2xl font-medium text-flatpurple font-body -rotate-12 w-max'
@@ -157,7 +158,7 @@ const Hero = () => {
 						</div>
 					</motion.div>
 				</motion.div>
-				<div className='absolute bottom-[8.5rem] -right-4 w-max rotate-90 text-flatgray font-light inline-flex md:bottom-40 md:right-12 select-none text-sm'>
+				<div className='absolute inline-flex text-sm font-light rotate-90 select-none bottom-10 -right-4 w-max text-flatgray md:right-12'>
 					Scroll Down <ArrowRightIcon className='w-4 ml-4' />
 				</div>
 			</div>
