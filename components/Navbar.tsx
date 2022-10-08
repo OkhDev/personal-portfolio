@@ -225,7 +225,7 @@ function Navbar() {
 					<motion.a
 						whileHover={{ borderColor: "#8873EF", x: 8 }}
 						href=''
-						className='hidden md:inline-flex font-medium cursor-pointer px-6 py-3.5 rounded-3xl border-2 border-offwhite items-center'
+						className='hidden md:inline-flex font-medium cursor-pointer px-6 py-3.5 rounded-3xl border-2 border-lightpurple items-center'
 					>
 						<span className='mt-[0.15rem]'>Let's Talk</span>
 						<PaperAirplaneIcon className='ml-3 w-[1.25rem] stroke-[2px]' />
