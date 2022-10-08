@@ -4,7 +4,7 @@ import { Links } from "../constants"
 export default function Footer() {
 	return (
 		<div className='flex justify-end'>
-			<footer className='py-8 md:py-12 mx-auto max-w-7xl sm:px-6 md:flex items-center md:justify-between px-8 md:px-12 w-full'>
+			<footer className='items-center w-full px-8 py-8 mx-auto md:py-12 max-w-7xl sm:px-6 md:flex md:justify-between md:px-12'>
 				<div className='flex justify-center space-x-2 md:order-2'>
 					{Links.map((item) => (
 						<a
@@ -14,12 +14,12 @@ export default function Footer() {
 							className='hover:text-slate-500 text-slate-600'
 						>
 							<span className='sr-only'>{item.name}</span>
-							<item.icon className='w-6 h-6' aria-hidden='true' />
+							<item.icon aria-hidden='true' />
 						</a>
 					))}
 				</div>
 				<div className='mt-8 md:order-1 md:mt-0'>
-					<p className='leading-4 text-center text-slate-600 font-medium'>
+					<p className='font-medium leading-4 text-center text-slate-600'>
 						Made with love
 						<HeartIcon className='inline w-5 h-5 mb-[3px] ml-1 fill-red-400' />
 					</p>
