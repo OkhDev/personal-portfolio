@@ -52,6 +52,11 @@
 
 	-webkit-tap-highlight-color: transparent;
 	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+	display: none;
 }
 
 html {
@@ -69,10 +74,6 @@ nav {
 
 .full-screen {
 	height: calc(100vh);
-}
-
-::-webkit-scrollbar {
-	display: none;
 }
 
 .h-screen {
