@@ -5,7 +5,7 @@ import { Skills } from "../constants"
 
 function About() {
 	return (
-		<section className='relative flex flex-grow bg-gradient-to-b from-flatpurple to-lightpurple'>
+		<section className='relative flex flex-grow bg-flatpurple'>
 			<div className='relative flex flex-col flex-1 h-full px-6 py-8 mx-auto md:py-24 md:px-12 max-w-7xl'>
 				{/* ABOUT ME TITLE */}
 				<h1 className='font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem] text-white mb-4'>
@@ -24,7 +24,7 @@ function About() {
 					<div className='basis-2/3'>
 						<ul className='flex flex-wrap gap-3 py-8 md:gap-5'>
 							{Skills.map((item) => (
-								<li className='inline-flex items-center px-4 py-3 rounded-xl bg-flatpurple w-max drop-shadow-sm'>
+								<li className='inline-flex items-center px-4 py-3 rounded-xl bg-lightpurple w-max drop-shadow-sm'>
 									<span className='mt-1 font-medium text-offwhite'>
 										{item.skill}
 									</span>
