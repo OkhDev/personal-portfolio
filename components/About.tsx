@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import Image from "next/image"
 
 import { Skills } from "../constants"

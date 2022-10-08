@@ -205,7 +205,7 @@ function Navbar() {
 													],
 												}}
 												transition={{
-													delay: 2,
+													delay: 1,
 													repeat: Infinity,
 													repeatDelay: 2,
 												}}
