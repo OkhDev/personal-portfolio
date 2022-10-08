@@ -1,5 +1,6 @@
-import { motion, useInView } from "framer-motion"
 import Image from "next/image"
+import { motion, useInView } from "framer-motion"
+import { ArrowRightIcon } from "@heroicons/react/24/outline"
 
 import { Skills } from "../constants"
 
@@ -21,24 +22,40 @@ function About() {
 						{/* <span className='absolute w-full h-6 bg-white'></span> */}
 					</div>
 					{/* LIST OF SKILLS */}
-					<div className='basis-2/3'>
-						<ul className='flex flex-wrap gap-3 py-8 md:gap-5'>
-							{Skills.map((item) => (
-								<li className='inline-flex items-center px-4 py-3 rounded-xl bg-lightpurple w-max drop-shadow-sm'>
-									<span className='mt-1 font-medium text-offwhite'>
-										{item.skill}
-									</span>
-								</li>
-							))}
-						</ul>
-						<p className='py-6 text-lg font-light leading-loose text-white'>
-							Lorem ipsum dolor sit amet, consectetur adipiscing
-							elit, sed do eiusmod tempor incididunt ut labore et
-							dolore magna aliqua. Sit amet dictum sit amet justo
-							donec enim. Erat pellentesque adipiscing commodo
-							elit. Molestie ac feugiat sed lectus vestibulum
-							mattis ullamcorper velit.
-						</p>
+					<div className='md:basis-2/3'>
+						<div>
+							<ul className='flex flex-wrap gap-3 py-8 md:gap-5'>
+								{Skills.map((item) => (
+									<li className='inline-flex items-center px-4 py-3 rounded-xl bg-lightpurple w-max drop-shadow-sm'>
+										<span className='mt-1 font-medium text-offwhite'>
+											{item.skill}
+										</span>
+									</li>
+								))}
+							</ul>
+						</div>
+						<div className='mt-6'>
+							<p className='text-lg font-light leading-loose text-white'>
+								Lorem ipsum dolor sit amet, consectetur
+								adipiscing elit, sed do eiusmod tempor
+								incididunt ut labore et dolore magna aliqua. Sit
+								amet dictum sit amet justo donec enim. Erat
+								pellentesque adipiscing commodo elit. Molestie
+								ac feugiat sed lectus vestibulum mattis
+								ullamcorper velit.
+							</p>
+						</div>
+						<div className='flex justify-center mt-12 md:justify-start'>
+							<a
+								href=''
+								className='items-center px-8 py-5 text-white border-2 border-white bg-lightpurple/50 rounded-3xl w-max'
+							>
+								Read more about me
+								<span className='inline-flex'>
+									<ArrowRightIcon className='w-5 ml-2 stroke-2 stroke-white' />
+								</span>
+							</a>
+						</div>
 					</div>
 					{/* PERSONAL BIO */}
 				</div>
