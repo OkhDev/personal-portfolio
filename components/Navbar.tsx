@@ -179,7 +179,7 @@ function Navbar() {
 								initial={"close"}
 								animate={isOpen ? "open" : "close"}
 								exit={"close"}
-								className='flex absolute top-0 left-0 w-screen z-[1] full-screen bg-gradient-to-t from-flatpurple to-lightpurple'
+								className='flex absolute top-0 left-0 w-screen z-[1] full-screen bg-gradient-to-tr from-flatpurple to-lightpurple'
 							>
 								<div className='m-auto'>
 									<ul className='flex flex-col items-center justify-end flex-1 gap-12 list-none select-none'>

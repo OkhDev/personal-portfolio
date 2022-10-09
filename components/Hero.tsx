@@ -149,7 +149,7 @@ const Hero = () => {
 									scale: 1.05,
 								}}
 								key={item.name}
-								target={item.target}
+								target='_blank'
 								href={item.href}
 								className='items-center px-6 py-5 bg-offwhite rounded-3xl'
 							>
@@ -165,9 +165,10 @@ const Hero = () => {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ delay: 2.4, duration: 1 }}
-					className='absolute inline-flex text-sm font-light rotate-90 select-none bottom-12 -right-4 w-max text-flatgray md:right-12'
+					className='absolute inline-flex text-sm font-light rotate-90 select-none bottom-12 -right-4 w-max text-flatgray/60 md:right-12'
 				>
-					Scroll Down <ArrowRightIcon className='w-4 ml-4' />
+					Scroll Down{" "}
+					<ArrowRightIcon className='w-4 ml-4 stroke-flatgray/60' />
 				</motion.div>
 			</motion.div>
 		</div>
