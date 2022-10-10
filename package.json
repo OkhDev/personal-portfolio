@@ -6,9 +6,11 @@
 		"start": "next start"
 	},
 	"dependencies": {
+		"babel-plugin-react-html-attrs": "^2.1.0",
 		"next": "latest",
 		"react": "18.1.0",
-		"react-dom": "18.1.0"
+		"react-dom": "18.1.0",
+		"uuid-random": "^1.3.2"
 	},
 	"devDependencies": {
 		"@heroicons/react": "^2.0.11",

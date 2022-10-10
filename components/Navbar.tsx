@@ -103,7 +103,7 @@ function Navbar() {
 	})
 
 	return (
-		<nav className='top-0 left-0 right-0 z-50 px-6 py-6 mx-auto tracking-wide bg-white select-none overflow-x-clip md:px-12'>
+		<nav className='sticky top-0 left-0 right-0 z-40 px-6 py-6 mx-auto tracking-wide bg-white select-none overflow-x-clip md:px-12'>
 			<div className='flex items-center justify-between w-full mx-auto max-w-7xl'>
 				{/* LEFT OF NAVBAR */}
 				<div className='cursor-pointer z-[2]'>
@@ -160,12 +160,12 @@ function Navbar() {
 							viewBox='0 0 24 24'
 							width='24'
 							height='24'
-							stroke-width='2'
+							strokeWidth='2'
 							stroke='currentColor'
 						>
 							<path
-								stroke-linecap='round'
-								stroke-linejoin='round'
+								strokeLinecap='round'
+								strokeLinejoin='round'
 								d='M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
 							/>
 						</motion.svg>

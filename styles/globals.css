@@ -81,10 +81,7 @@ nav {
 	height: calc((var(--vh, 1vh) * 100) - 84px);
 }
 
-.wave1 {
-	background-image: url(".././public/images/waves1.svg");
-}
-
-.wave2 {
-	background-image: url(".././public/images/waves2.svg");
+.hero {
+	min-height: calc(100vh - 84px);
+	min-height: calc((var(--vh, 1vh) * 100) - 84px);
 }

@@ -47,12 +47,12 @@ const subtitleVariants = {
 
 const Hero = () => {
 	return (
-		<div className='relative z-10 flex flex-1 h-screen max-h-screen -mt-3'>
+		<div className='relative z-10 flex flex-grow'>
 			<motion.div
 				variants={loadHeroVariants}
 				initial='out'
 				animate='in'
-				className='relative flex flex-col flex-1 px-6 m-auto md:px-12 max-w-7xl'
+				className='relative flex flex-col justify-center w-full px-6 mx-auto hero md:px-12 max-w-7xl'
 			>
 				{/* HELLO MESSAGE */}
 				<motion.p
@@ -62,7 +62,7 @@ const Hero = () => {
 						transition: { duration: 1 },
 					}}
 					transition={{ duration: 0.8 }}
-					className='text-2xl font-medium text-flatpurple font-body -rotate-12 w-max'
+					className='z-50 text-2xl font-medium text-flatpurple font-body -rotate-12 w-max'
 				>
 					Hello!
 				</motion.p>
@@ -158,17 +158,16 @@ const Hero = () => {
 							</motion.a>
 						))}
 					</div>
-				</motion.div>
-
-				{/* SCROLL DOWN MESSAGE */}
-				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ delay: 2.4, duration: 1 }}
-					className='absolute inline-flex text-sm font-light rotate-90 select-none bottom-12 -right-4 w-max text-flatgray/60 md:right-12'
-				>
-					Scroll Down{" "}
-					<ArrowRightIcon className='w-4 ml-4 stroke-flatgray/60' />
+					{/* SCROLL DOWN MESSAGE */}
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ delay: 2.4, duration: 1 }}
+						className='absolute inline-flex text-sm font-light rotate-90 select-none bottom-32 md:bottom-64 -right-4 w-max text-flatgray/60 md:right-12'
+					>
+						Scroll Down{" "}
+						<ArrowRightIcon className='w-4 ml-4 stroke-flatgray/60' />
+					</motion.div>
 				</motion.div>
 			</motion.div>
 		</div>

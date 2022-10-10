@@ -1,13 +1,20 @@
-import Image from "next/image"
+import { useRef, useEffect } from "react"
 import { motion, useInView } from "framer-motion"
-import { ArrowRightIcon } from "@heroicons/react/24/outline"
+import { default as id } from "uuid-random"
 
-import { Skills, Resume } from "../constants"
+import { Skill, Resume } from "../constants"
 
-function About() {
+function Skills() {
+	// const ref = useRef(null)
+	// const isInView = useInView(ref)
+
+	// useEffect(() => {
+	// 	console.log("Element is in view: ", isInView)
+	// }, [isInView])
+
 	return (
 		<section className='relative flex flex-grow bg-flatpurple'>
-			<div className='relative flex flex-col flex-1 h-full px-6 py-8 m-auto md:py-24 md:px-12 max-w-7xl'>
+			<div className='relative flex flex-col flex-1 h-full px-6 py-12 m-auto md:py-24 md:px-12 max-w-7xl'>
 				{/* TITLE */}
 				<div className='flex flex-col items-start gap-8 md:gap-16 lg:gap-24 md:flex-row'>
 					{/* DESCRIPTION */}
@@ -33,8 +40,11 @@ function About() {
 							</h3>
 							{/* SKILLS BLOCK */}
 							<ul className='flex flex-wrap gap-3 md:gap-5'>
-								{Skills.map((item) => (
-									<li className='inline-flex items-center px-4 py-3 rounded-xl bg-lightpurple w-max drop-shadow-sm'>
+								{Skill.map((item) => (
+									<li
+										key={id()}
+										className='inline-flex items-center px-4 py-3 rounded-xl bg-lightpurple w-max drop-shadow-sm'
+									>
 										{/* <item.icon /> */}
 										<span className='mt-1 font-medium text-offwhite'>
 											{item.skill}
@@ -50,7 +60,7 @@ function About() {
 						</h2>
 						<div className='space-y-10'>
 							{Resume.map((resume) => (
-								<div className='leading-loose'>
+								<div key={id()} className='leading-loose'>
 									<hr className='border-white border-[1px] rounded-full mb-4 w-full' />
 									<div className='flex flex-col gap-3 md:flex-row md:gap-6'>
 										<div className='w-full text-white md:basis-1/3'>
@@ -69,18 +79,10 @@ function About() {
 							))}
 						</div>
 					</div>
-					{/* SELF IMAGE */}
-					{/* <div className='relative pb-4 md:mb-0 basis-1/3'>
-						<img
-							src='/images/self.png'
-							className='w-64 md:w-full drop-shadow-xl'
-						/>
-						/// <span className='absolute w-full h-6 bg-white'></span>
-					</div> */}
 				</div>
 			</div>
 		</section>
 	)
 }
 
-export default About
+export default Skills

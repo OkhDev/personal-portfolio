@@ -1,17 +1,15 @@
-import { SVGProps } from "react"
-
 export const NavLinks = [
 	{
-		id: "about",
-		title: "About",
+		id: "experience",
+		title: "Experience",
 	},
 	{
-		id: "resume",
-		title: "Resume",
+		id: "projects",
+		title: "Projects",
 	},
 	{
-		id: "portfolio",
-		title: "Portfolio",
+		id: "contact",
+		title: "Contact",
 	},
 ]
 
@@ -33,7 +31,7 @@ export const Resume = [
 	},
 ]
 
-export const Skills = [
+export const Skill = [
 	{
 		skill: "TypeScript",
 		icon: () => (
@@ -76,7 +74,16 @@ export const Skills = [
 		skill: "SQL",
 	},
 	{
+		skill: "Jest",
+	},
+	{
+		skill: "Cypress",
+	},
+	{
 		skill: "GraphQL",
+	},
+	{
+		skill: "PostgreSQL",
 	},
 ]
 
