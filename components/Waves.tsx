@@ -1,20 +1,24 @@
 import Image from "next/image"
 
-const Wave = () => {
+interface IWaves {
+	image: string
+	position: string
+}
+
+const Waves = ({ image, position }: IWaves): JSX.Element => {
 	return (
-		<div className='relative mt-6 md:mt-12 lg:mt-28'>
+		<div className='relative align-bottom'>
 			{/* bg-center bg-no-repeat aspect-[1200/300] bg-cover */}
-			<div className='absolute bottom-0 w-full -z-10'>
+			<div className={`absolute ${position}-0 z-[2] w-full`}>
 				<Image
-					src='/images/waves1.svg'
-					alt='flat waves'
+					src={image}
 					layout='responsive'
 					width={1200}
-					height={300}
+					height={200}
 				/>
 			</div>
 		</div>
 	)
 }
 
-export default Wave
+export default Waves

@@ -1,10 +1,14 @@
 import type { NextPage } from "next"
+import { useEffect } from "react"
+
 import Head from "next/head"
 import About from "../components/About"
 import Navbar from "../components/Navbar"
-import { useEffect } from "react"
 import Hero from "../components/Hero"
 import Waves from "../components/Waves"
+
+import wavesHeader from "/public/images/waves1.svg"
+import wavesSkills from "/public/images/waves2.svg"
 
 const Home: NextPage = () => {
 	useEffect(() => {
@@ -25,9 +29,11 @@ const Home: NextPage = () => {
 
 			<Hero />
 
-			<Waves />
+			<Waves image={wavesHeader} position='bottom' />
 
 			<About />
+
+			<Waves image={wavesSkills} position='top' />
 		</>
 	)
 }

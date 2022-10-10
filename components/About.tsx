@@ -9,7 +9,7 @@ function About() {
 		<section className='relative flex flex-grow bg-flatpurple'>
 			<div className='relative flex flex-col flex-1 h-full px-6 py-8 m-auto md:py-24 md:px-12 max-w-7xl'>
 				{/* TITLE */}
-				<div className='flex flex-col items-start gap-8 md:gap-16 md:flex-row'>
+				<div className='flex flex-col items-start gap-8 md:gap-16 lg:gap-24 md:flex-row'>
 					{/* DESCRIPTION */}
 					<div className='md:basis-1/2'>
 						<h1 className='font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem] text-white mb-8 w-full'>
@@ -35,6 +35,7 @@ function About() {
 							<ul className='flex flex-wrap gap-3 md:gap-5'>
 								{Skills.map((item) => (
 									<li className='inline-flex items-center px-4 py-3 rounded-xl bg-lightpurple w-max drop-shadow-sm'>
+										{/* <item.icon /> */}
 										<span className='mt-1 font-medium text-offwhite'>
 											{item.skill}
 										</span>

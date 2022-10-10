@@ -9,7 +9,7 @@ export default function Footer() {
 					{Links.map((item) => (
 						<a
 							key={item.name}
-							target={item.target}
+							target='_blank'
 							href={item.href}
 							className='hover:text-slate-500 text-slate-600'
 						>

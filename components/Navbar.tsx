@@ -126,13 +126,13 @@ function Navbar() {
 				</div>
 
 				{/* MIDDLE OF NAVBAR */}
-				<div className='hidden space-x-10 align-middle cursor-pointer md:inline-flex'>
+				<div className='hidden gap-12 align-middle cursor-pointer md:inline-flex'>
 					{NavLinks.map((nav) => (
 						<motion.a
 							initial='rest'
 							whileHover='hover'
 							animate='rest'
-							className='relative w-max'
+							className='relative w-max '
 							key={nav.id}
 						>
 							{nav.title}
