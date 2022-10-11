@@ -20,7 +20,7 @@ export const Resume = [
 		company: "Voxels NFT (by Voxelverse)",
 	},
 	{
-		date: "Jul 2021 - Present",
+		date: "Jul 2021 - Jan 2022",
 		position: "Jr. Front-end Software Engineer",
 		company: "Tech Hedge Incorporated",
 	},

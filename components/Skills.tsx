@@ -1,16 +1,49 @@
-import { useRef, useEffect } from "react"
-import { motion, useInView } from "framer-motion"
+import { useRef } from "react"
 import { default as id } from "uuid-random"
+import { motion, useInView } from "framer-motion"
 
 import { Skill, Resume } from "../constants"
 
-function Skills() {
-	// const ref = useRef(null)
-	// const isInView = useInView(ref)
+const loadSkillsVariant = {
+	in: {
+		y: 0,
+		transition: {
+			delay: 0.4,
+			staggerChildren: 0.4,
+		},
+	},
+}
 
-	// useEffect(() => {
-	// 	console.log("Element is in view: ", isInView)
-	// }, [isInView])
+const elementVariant = {
+	out: {
+		y: 40,
+		opacity: 0,
+	},
+	in: {
+		y: 0,
+		opacity: "100%",
+		transition: {
+			duration: 0.6,
+		},
+	},
+}
+
+function Skills() {
+	const refTitle = useRef(null)
+	const refSkills = useRef(null)
+	const refExperience = useRef(null)
+	const isInViewTitle = useInView(refTitle, {
+		margin: "0px 0px -250px 0px",
+		once: true,
+	})
+	const isInViewSkills = useInView(refSkills, {
+		margin: "0px 0px -250px 0px",
+		once: true,
+	})
+	const isInViewExperience = useInView(refExperience, {
+		margin: "0px 0px -250px 0px",
+		once: true,
+	})
 
 	return (
 		<section className='relative flex flex-grow bg-flatpurple'>
@@ -19,27 +52,52 @@ function Skills() {
 				<div className='flex flex-col items-start gap-8 md:gap-16 lg:gap-24 md:flex-row'>
 					{/* DESCRIPTION */}
 					<div className='md:basis-1/2'>
-						<h1 className='font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem] text-white mb-8 w-full'>
-							Skills &amp; Experience
-						</h1>
-						<div className='flex mb-4 space-x-4 md:mb-8'>
-							<div className='flex-initial w-12 mt-1 text-white'>
-								&#11834;
-							</div>
-							<p className='font-light leading-loose text-white'>
-								Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua. Sit
-								amet dictum sit amet justo donec enim. Erat
-								pellentesque adipiscing commodo elit.
-							</p>
-						</div>
-						<div className='py-8'>
-							<h3 className='mb-8 text-4xl text-white font-header'>
+						<motion.div
+							ref={refTitle}
+							variants={loadSkillsVariant}
+							initial={!isInViewTitle && "out"}
+							animate={isInViewTitle ? "in" : "out"}
+						>
+							<motion.h1
+								variants={elementVariant}
+								className='font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem] text-white mb-8 w-full'
+							>
+								Skills &amp; Experience
+							</motion.h1>
+							<motion.div
+								variants={elementVariant}
+								className='flex mb-4 space-x-4 md:mb-8'
+							>
+								<div className='flex-initial w-12 mt-1 text-white'>
+									&#11834;
+								</div>
+								<p className='font-light leading-loose text-white'>
+									Lorem ipsum dolor sit amet, consectetur
+									adipiscing elit, sed do eiusmod tempor
+									incididunt ut labore et dolore magna aliqua.
+									Sit amet dictum sit amet justo donec enim.
+									Erat pellentesque adipiscing commodo elit.
+								</p>
+							</motion.div>
+						</motion.div>
+						<motion.div
+							ref={refSkills}
+							variants={loadSkillsVariant}
+							initial={!isInViewSkills && "out"}
+							animate={isInViewSkills ? "in" : "out"}
+							className='py-8'
+						>
+							<motion.h3
+								variants={elementVariant}
+								className='mb-8 text-4xl text-white font-header'
+							>
 								Skills
-							</h3>
+							</motion.h3>
 							{/* SKILLS BLOCK */}
-							<ul className='flex flex-wrap gap-3 md:gap-5'>
+							<motion.ul
+								variants={elementVariant}
+								className='flex flex-wrap gap-3 md:gap-5'
+							>
 								{Skill.map((item) => (
 									<li
 										key={id()}
@@ -51,14 +109,26 @@ function Skills() {
 										</span>
 									</li>
 								))}
-							</ul>
-						</div>
+							</motion.ul>
+						</motion.div>
 					</div>
-					<div className='md:basis-1/2'>
-						<h2 className='mb-8 text-4xl text-white font-header'>
+					<motion.div
+						ref={refExperience}
+						variants={loadSkillsVariant}
+						initial={!isInViewExperience && "out"}
+						animate={isInViewExperience ? "in" : "out"}
+						className='md:basis-1/2'
+					>
+						<motion.h2
+							variants={elementVariant}
+							className='mb-8 text-4xl text-white font-header'
+						>
 							Experience
-						</h2>
-						<div className='space-y-10'>
+						</motion.h2>
+						<motion.div
+							variants={elementVariant}
+							className='space-y-10'
+						>
 							{Resume.map((resume) => (
 								<div key={id()} className='leading-loose'>
 									<hr className='border-white border-[1px] rounded-full mb-4 w-full' />
@@ -77,8 +147,8 @@ function Skills() {
 									</div>
 								</div>
 							))}
-						</div>
-					</div>
+						</motion.div>
+					</motion.div>
 				</div>
 			</div>
 		</section>

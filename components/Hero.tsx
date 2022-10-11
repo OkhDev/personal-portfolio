@@ -1,8 +1,9 @@
+import { useEffect } from "react"
 import { ArrowRightIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline"
 import { Links } from "../constants"
 import { motion } from "framer-motion"
 
-const loadHeroVariants = {
+const loadHeroVariant = {
 	in: {
 		y: 0,
 		transition: {
@@ -12,7 +13,7 @@ const loadHeroVariants = {
 	},
 }
 
-const elementVariants = {
+const elementVariant = {
 	out: {
 		y: 40,
 		opacity: 0,
@@ -26,7 +27,7 @@ const elementVariants = {
 	},
 }
 
-const subtitleVariants = {
+const subtitleVariant = {
 	rest: {
 		height: "0.25rem",
 		transition: {
@@ -46,10 +47,16 @@ const subtitleVariants = {
 }
 
 const Hero = () => {
+	useEffect(() => {
+		document.documentElement.style.setProperty(
+			"--vh",
+			window.innerHeight * 0.01 + "px"
+		)
+	})
 	return (
 		<div className='relative z-10 flex flex-grow'>
 			<motion.div
-				variants={loadHeroVariants}
+				variants={loadHeroVariant}
 				initial='out'
 				animate='in'
 				className='relative flex flex-col justify-center w-full px-6 mx-auto hero md:px-12 max-w-7xl'
@@ -69,7 +76,7 @@ const Hero = () => {
 
 				{/* I AM ARIEL OKHTENBERG */}
 				<motion.div
-					variants={elementVariants}
+					variants={elementVariant}
 					className='relative mt-2 mb-4'
 				>
 					<h1 className='font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem]'>
@@ -82,7 +89,7 @@ const Hero = () => {
 
 				{/* WEB DEVELOPER & GRAPHIC DESIGNER */}
 				<motion.div
-					variants={elementVariants}
+					variants={elementVariant}
 					className='inline-flex text-lg md:text-xl text-flatgray'
 				>
 					<motion.div
@@ -93,7 +100,7 @@ const Hero = () => {
 					>
 						<h3 className='text-flatgray'>Web Developer</h3>
 						<motion.span
-							variants={subtitleVariants}
+							variants={subtitleVariant}
 							className='absolute bg-flatpurple/30 h-1 w-full left-0 bottom-0 -z-[1]'
 						></motion.span>
 					</motion.div>
@@ -106,7 +113,7 @@ const Hero = () => {
 					>
 						<h3 className='text-flatgray'>Graphic Designer</h3>
 						<motion.span
-							variants={subtitleVariants}
+							variants={subtitleVariant}
 							className='absolute bg-flatpurple/30 h-1 w-full left-0 bottom-0 -z-[1]'
 						></motion.span>
 					</motion.div>
@@ -114,8 +121,8 @@ const Hero = () => {
 
 				{/* PERSONAL DESCRIPTION */}
 				<motion.div
-					variants={elementVariants}
-					className='flex my-10 space-x-2'
+					variants={elementVariant}
+					className='flex my-10 space-x-4'
 				>
 					<div className='flex-initial w-12 mt-1'>&#11834;</div>
 					<p className='font-light leading-loose text-flatgray'>
@@ -127,7 +134,7 @@ const Hero = () => {
 
 				{/* HERO BUTTONS/LINKS */}
 				<motion.div
-					variants={elementVariants}
+					variants={elementVariant}
 					className='flex flex-col select-none'
 				>
 					<div className='mt-4 mb-10'>
