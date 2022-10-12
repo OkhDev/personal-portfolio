@@ -1,30 +1,30 @@
 import { HeartIcon } from "@heroicons/react/24/solid"
-import { Links } from "../constants"
+import { SocialLinks } from "../constants"
 
 export default function Footer() {
 	return (
-		<div className='flex justify-end'>
-			<footer className='items-center w-full px-8 py-8 mx-auto md:py-12 max-w-7xl sm:px-6 md:flex md:justify-between md:px-12'>
-				<div className='flex justify-center space-x-2 md:order-2'>
-					{Links.map((item) => (
+		<footer className='relative flex pt-4 md:pt-6 bg-flatpurple'>
+			<div className='relative flex flex-col items-center justify-between w-full gap-8 pt-6 pb-12 m-auto md:px-12 md:flex-row max-w-7xl'>
+				<div className='inline-flex items-center text-white'>
+					Made with love{" "}
+					<HeartIcon className='w-6 ml-2 fill-red-400' />
+				</div>
+				<div className='inline-flex gap-12 text-white'>
+					{SocialLinks.map((item, i) => (
 						<a
-							key={item.name}
+							key={i}
 							target='_blank'
 							href={item.href}
-							className='hover:text-slate-500 text-slate-600'
+							className='items-center'
 						>
 							<span className='sr-only'>{item.name}</span>
-							<item.icon aria-hidden='true' />
+							<span className='fill-white'>
+								<item.icon aria-hidden='true' />
+							</span>
 						</a>
 					))}
 				</div>
-				<div className='mt-8 md:order-1 md:mt-0'>
-					<p className='font-medium leading-4 text-center text-slate-600'>
-						Made with love
-						<HeartIcon className='inline w-5 h-5 mb-[3px] ml-1 fill-red-400' />
-					</p>
-				</div>
-			</footer>
-		</div>
+			</div>
+		</footer>
 	)
 }

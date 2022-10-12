@@ -3,8 +3,9 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import Navbar from "../components/Navbar"
 import Hero from "../components/Hero"
-import Skills from "../components/Skills"
+import About from "../components/About"
 import Projects from "../components/Projects"
+import Footer from "../components/Footer"
 
 import Waves from "../components/Waves"
 import wavesHeader from "/public/images/waves1.svg"
@@ -66,11 +67,15 @@ const Home: NextPage = () => {
 
 			<Waves image={wavesHeader} position='bottom' />
 
-			<Skills />
+			<About />
 
-			<Waves image={wavesSkills} position='top' marginBottom={5} />
+			<Waves image={wavesSkills} position='top' />
 
-			{/* <Projects /> */}
+			<Projects />
+
+			<Waves image={wavesHeader} position='bottom' />
+
+			<Footer />
 		</>
 	)
 }
