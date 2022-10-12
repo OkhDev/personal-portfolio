@@ -18,16 +18,19 @@ export const Resume = [
 		date: "Jan 2022 - Present",
 		position: "Front-end Web Developer & Graphic Designer",
 		company: "Voxels NFT (by Voxelverse)",
+		description: "NFT Project Startup",
 	},
 	{
 		date: "Jul 2021 - Jan 2022",
 		position: "Jr. Front-end Software Engineer",
 		company: "Tech Hedge Incorporated",
+		description: "Hedge Fund Startup",
 	},
 	{
 		date: "Aug 2019 - Jan 2022",
 		position: "Graphic Designer & Data Visualization",
 		company: "Wooter Apparel",
+		description: "Custom Sports Apparel Company",
 	},
 ]
 

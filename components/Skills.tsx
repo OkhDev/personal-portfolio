@@ -1,6 +1,10 @@
 import { useRef } from "react"
 import { default as id } from "uuid-random"
-import { motion, useInView } from "framer-motion"
+import { motion, useInView, LayoutGroup } from "framer-motion"
+import {
+	InformationCircleIcon,
+	BriefcaseIcon,
+} from "@heroicons/react/24/outline"
 
 import { Skill, Resume } from "../constants"
 
@@ -8,8 +12,8 @@ const loadSkillsVariant = {
 	in: {
 		y: 0,
 		transition: {
-			delay: 0.4,
-			staggerChildren: 0.4,
+			delay: 0.2,
+			staggerChildren: 0.2,
 		},
 	},
 }
@@ -99,7 +103,7 @@ function Skills() {
 								className='flex flex-wrap gap-3 md:gap-5'
 							>
 								{Skill.map((item) => (
-									<li
+									<motion.li
 										key={id()}
 										className='inline-flex items-center px-4 py-3 rounded-xl bg-lightpurple w-max drop-shadow-sm'
 									>
@@ -107,7 +111,7 @@ function Skills() {
 										<span className='mt-1 font-medium text-offwhite'>
 											{item.skill}
 										</span>
-									</li>
+									</motion.li>
 								))}
 							</motion.ul>
 						</motion.div>
@@ -132,17 +136,31 @@ function Skills() {
 							{Resume.map((resume) => (
 								<div key={id()} className='leading-loose'>
 									<hr className='border-white border-[1px] rounded-full mb-4 w-full' />
-									<div className='flex flex-col gap-3 md:flex-row md:gap-6'>
-										<div className='w-full text-white md:basis-1/3'>
+									<div className='flex flex-col gap-3 lg:flex-row md:gap-6'>
+										<div className='text-white w-max md:basis-1/3'>
 											{resume.date}
 										</div>
 										<div className='md:basis-2/3'>
 											<h3 className='mb-4 text-2xl font-bold text-white'>
 												{resume.position}
 											</h3>
-											<p className='inline-flex text-lg text-white/70'>
-												{resume.company}
-											</p>
+											<div className='inline-flex items-center w-max'>
+												<span>
+													<BriefcaseIcon className='w-6 mr-2 stroke-2 stroke-white/80' />
+												</span>
+												<p className='items-center text-white/80'>
+													{resume.company}
+												</p>
+											</div>
+											<br />
+											<div className='inline-flex items-center w-max'>
+												<span>
+													<InformationCircleIcon className='w-6 mr-2 stroke-2 stroke-white/80' />
+												</span>
+												<p className='items-center text-white/80'>
+													{resume.description}
+												</p>
+											</div>
 										</div>
 									</div>
 								</div>
