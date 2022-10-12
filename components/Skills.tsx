@@ -12,7 +12,6 @@ const loadSkillsVariant = {
 	in: {
 		y: 0,
 		transition: {
-			delay: 0.2,
 			staggerChildren: 0.2,
 		},
 	},
