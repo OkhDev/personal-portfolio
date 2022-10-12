@@ -219,13 +219,3 @@ export const Project = [
 		imageAlt: "placeholder",
 	},
 ]
-export const ViewLinks = [
-	{
-		button: "Live Preview",
-		icon: () => <svg></svg>,
-	},
-	{
-		button: "View Code",
-		icon: () => <svg></svg>,
-	},
-]
