@@ -77,7 +77,7 @@ const Hero = () => {
 						transition: { duration: 1 },
 					}}
 					transition={{ duration: 0.8 }}
-					className='z-50 text-2xl font-medium text-flatpurple font-body -rotate-12 w-max'
+					className='text-2xl font-medium text-flatpurple font-body -rotate-12 w-max'
 				>
 					{Hello}
 				</motion.p>

@@ -103,7 +103,7 @@ function Navbar() {
 	})
 
 	return (
-		<nav className='sticky top-0 left-0 right-0 z-40 px-6 py-6 mx-auto tracking-wide bg-white select-none overflow-x-clip md:px-12'>
+		<nav className='sticky top-0 left-0 right-0 z-40 px-6 py-6 mx-auto tracking-wide bg-white select-none drop-shadow-sm overflow-x-clip md:px-12'>
 			<div className='flex items-center justify-between w-full mx-auto max-w-7xl'>
 				{/* LEFT OF NAVBAR */}
 

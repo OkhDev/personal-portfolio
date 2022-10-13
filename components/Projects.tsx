@@ -10,7 +10,7 @@ function Projects() {
 					{ProjectsTitle}
 				</h1>
 			</div>
-			<div className='relative flex flex-col w-full h-full gap-12 md:gap-24 md:px-12 max-w-7xl'>
+			<motion.div className='relative flex flex-col w-full h-full gap-12 md:gap-24 md:px-12 max-w-7xl'>
 				{Project.map((project, i) => (
 					<div
 						key={i}
@@ -21,7 +21,7 @@ function Projects() {
 						}`}
 					>
 						<div
-							className={`relative w-full min-h-[30vh] basis-1/2 overflow-clip bg-flatpurple items-center justify-center flex ${
+							className={`relative w-full min-h-[20vh] basis-1/2 overflow-clip  items-center justify-center flex bg-flatpurple ${
 								Math.abs(i % 2) == 1
 									? "md:rounded-l-xl"
 									: "md:rounded-r-xl"
@@ -43,10 +43,13 @@ function Projects() {
 									: "md:rounded-l-xl"
 							}`}
 						>
-							<h3 className='text-4xl font-header'>
+							<h3 className='inline-flex items-center text-4xl font-header'>
 								{project.projectName}
+								{/* <span className='px-4 py-2 ml-6 text-xl font-medium text-white rounded-full bg-flatorange'>
+									WIP
+								</span> */}
 							</h3>
-							<p className='leading-loose'>
+							<p className='leading-loose text-flatgray'>
 								{project.projectDescription}
 							</p>
 							<div className='flex flex-wrap justify-center w-full gap-4 md:justify-start'>
@@ -76,7 +79,7 @@ function Projects() {
 						</div>
 					</div>
 				))}
-			</div>
+			</motion.div>
 		</section>
 	)
 }

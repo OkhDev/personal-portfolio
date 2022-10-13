@@ -33,7 +33,7 @@ const elementVariant = {
 		y: 0,
 		opacity: "100%",
 		transition: {
-			duration: 0.6,
+			duration: 0.4,
 		},
 	},
 }
