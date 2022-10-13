@@ -101,8 +101,6 @@ function Navbar() {
 		setLocked(!locked)
 	}
 
-	const handleNavClick = () => {}
-
 	useEffect(() => {
 		window.addEventListener("resize", handleResize)
 	})

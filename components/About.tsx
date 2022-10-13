@@ -33,6 +33,18 @@ const loadTechnologiesVariant = {
 	},
 }
 
+const technologiesVariant = {
+	out: {
+		scale: 0,
+	},
+	in: {
+		scale: 1,
+		transition: {
+			duration: 0.4,
+		},
+	},
+}
+
 const elementVariant = {
 	out: {
 		y: 40,
@@ -116,7 +128,7 @@ function About() {
 							{Skill.map((item, i) => (
 								<AnimatePresence>
 									<motion.li
-										variants={elementVariant}
+										variants={technologiesVariant}
 										key={i}
 										className='inline-flex items-center px-4 py-3 rounded-md bg-lightpurple w-max drop-shadow-sm'
 									>
