@@ -6,7 +6,7 @@ import {
 	NameTitle,
 	Profession,
 	TitleDescription,
-	PortfolioButton,
+	ProjectsButton,
 	ScrollDown,
 } from "../constants"
 import { motion } from "framer-motion"
@@ -62,7 +62,7 @@ const Hero = () => {
 		)
 	})
 	return (
-		<div className='relative flex flex-grow bg-white'>
+		<div id='home' className='relative flex flex-grow bg-white'>
 			<motion.div
 				variants={loadHeroVariant}
 				initial='out'
@@ -137,11 +137,11 @@ const Hero = () => {
 				>
 					<div className='mt-4 mb-10'>
 						<a
-							href=''
+							href={ProjectsButton.href}
 							className='items-center px-8 py-5 bg-flatpurple rounded-3xl w-max drop-shadow-sm'
 						>
 							<span className='mt-[0.2rem] text-white inline-flex'>
-								{PortfolioButton.title}
+								{ProjectsButton.title}
 								<ArrowUpRightIcon className='stroke-white stroke-[2px] w-5 ml-2' />
 							</span>
 						</a>

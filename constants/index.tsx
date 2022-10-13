@@ -2,24 +2,26 @@
 export const NavTitle = ["Okhtenberg", "."]
 export const NavLinks = [
 	{
-		id: "about",
 		title: "About",
-		href: "",
+		href: "#about",
 	},
 	{
-		id: "projects",
 		title: "Projects",
-		href: "",
+		href: "#projects",
 	},
 	{
-		id: "contact",
 		title: "Contact",
-		href: "",
+		href: "#contact",
+	},
+	{
+		title: "Let's Talk",
+		href: "mailto:aokhtenberg@gmail.com",
 	},
 ]
+
 export const LetsTalk = {
 	title: "Let's Talk",
-	href: "",
+	href: "mailto:aokhtenberg@gmail.com",
 }
 
 // HERO COMPONENT
@@ -28,9 +30,9 @@ export const NameTitle = "I am Ariel Okhtenberg"
 export const Profession = ["Web Developer", "Graphic Designer"]
 export const TitleDescription =
 	"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-export const PortfolioButton = {
-	title: "Portfolio",
-	href: "",
+export const ProjectsButton = {
+	title: "Projects",
+	href: "#projects",
 }
 export const ScrollDown = "Scroll Down"
 // Icons from https://iconmonstr.com/
@@ -219,3 +221,13 @@ export const Project = [
 		imageAlt: "placeholder",
 	},
 ]
+
+// CONTACT COMPONENT
+export const ContactTitle = "Contact Me"
+export const ContactEmail = {
+	email: "aokhtenberg@gmail.com",
+	href: "mailto:aokhtenberg@gmail.com",
+}
+export const ContactDescription =
+	"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+export const ContactNote = ["Estimated reply time:", "within a day"]

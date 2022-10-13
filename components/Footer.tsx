@@ -6,7 +6,7 @@ export default function Footer() {
 		<footer className='relative flex pt-4 md:pt-6 bg-flatpurple'>
 			<div className='relative flex flex-col items-center justify-between w-full gap-8 pt-6 pb-12 m-auto md:px-12 md:flex-row max-w-7xl'>
 				<div className='inline-flex items-center text-center text-white md:text-left'>
-					&copy; 2022, Built and designed by <br /> Ariel Okhtenberg
+					&copy; All rights reserved &middot; By Ariel Okhtenberg
 				</div>
 				<div className='inline-flex gap-12 text-white'>
 					{SocialLinks.map((item, i) => (

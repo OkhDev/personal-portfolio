@@ -10,6 +10,7 @@ import Footer from "../components/Footer"
 import Waves from "../components/Waves"
 import wavesHeader from "/public/images/waves1.svg"
 import wavesSkills from "/public/images/waves2.svg"
+import Contact from "../components/Contact"
 
 const Home: NextPage = () => {
 	return (
@@ -74,6 +75,8 @@ const Home: NextPage = () => {
 			<Projects />
 
 			<Waves image={wavesHeader} position='bottom' />
+
+			<Contact />
 
 			<Footer />
 		</>

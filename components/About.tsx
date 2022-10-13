@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
+import { motion, useInView, AnimatePresence } from "framer-motion"
 import {
 	InformationCircleIcon,
 	BriefcaseIcon,
@@ -20,6 +20,15 @@ const loadSkillsVariant = {
 		y: 0,
 		transition: {
 			staggerChildren: 0.2,
+		},
+	},
+}
+
+const loadTechnologiesVariant = {
+	in: {
+		y: 0,
+		transition: {
+			staggerChildren: 0.05,
 		},
 	},
 }
@@ -56,7 +65,10 @@ function About() {
 	})
 
 	return (
-		<section className='relative flex pt-4 md:pt-6 bg-flatpurple'>
+		<section
+			id='about'
+			className='relative flex pt-4 md:pt-6 bg-flatpurple'
+		>
 			<div className='relative flex flex-col gap-8 px-6 py-12 m-auto md:py-24 md:px-12 max-w-7xl md:gap-16 lg:gap-24 md:flex-row'>
 				<div className='md:basis-1/2'>
 					<motion.div
@@ -88,7 +100,7 @@ function About() {
 					{/* TECHNOLOGIES BLOCK */}
 					<motion.div
 						ref={refSkills}
-						variants={loadSkillsVariant}
+						variants={loadTechnologiesVariant}
 						initial={!isInViewSkills && "out"}
 						animate={isInViewSkills ? "in" : "out"}
 						className='py-8'
@@ -100,22 +112,22 @@ function About() {
 							{TechnologiesTitle}
 						</motion.h3>
 
-						<motion.ul
-							variants={elementVariant}
-							className='flex flex-wrap gap-4 md:gap-6'
-						>
+						<ul className='flex flex-wrap gap-4 md:gap-6'>
 							{Skill.map((item, i) => (
-								<motion.li
-									key={i}
-									className='inline-flex items-center px-4 py-3 rounded-md bg-lightpurple w-max drop-shadow-sm'
-								>
-									{/* <item.icon /> */}
-									<span className='mt-1 font-medium text-offwhite'>
-										{item.skill}
-									</span>
-								</motion.li>
+								<AnimatePresence>
+									<motion.li
+										variants={elementVariant}
+										key={i}
+										className='inline-flex items-center px-4 py-3 rounded-md bg-lightpurple w-max drop-shadow-sm'
+									>
+										{/* <item.icon /> */}
+										<span className='mt-1 font-medium text-offwhite'>
+											{item.skill}
+										</span>
+									</motion.li>
+								</AnimatePresence>
 							))}
-						</motion.ul>
+						</ul>
 					</motion.div>
 				</div>
 				<motion.div
@@ -131,66 +143,69 @@ function About() {
 					>
 						{ExperienceTitle}
 					</motion.h2>
-					<motion.div
-						variants={elementVariant}
-						className='space-y-10'
-					>
+					<div className='space-y-10'>
 						{ExperienceResume.map((resume, i) => (
-							<div key={i} className='leading-loose'>
-								<hr className='border-white border-[1px] rounded-full mb-4 w-full' />
-								<div className='flex flex-col gap-3 lg:flex-row md:gap-6'>
-									<div className='text-white w-max md:basis-1/3'>
-										{resume.date}
-										<br />
-										<span className='inline-flex items-center px-4 py-2 my-2 text-sm font-bold uppercase bg-white rounded-md md:my-0 md:mt-2 text-lightpurple drop-shadow-sm'>
-											{resume.jobType}
-										</span>
-									</div>
-									<div className='md:basis-2/3'>
-										<h3 className='mb-4 text-2xl font-bold text-white'>
-											{resume.positionName}
-										</h3>
+							<AnimatePresence>
+								<motion.div
+									variants={elementVariant}
+									key={i}
+									className='leading-loose'
+								>
+									<hr className='border-white border-[1px] rounded-full mb-4 w-full' />
+									<div className='flex flex-col gap-3 lg:flex-row md:gap-6'>
+										<div className='text-white w-max md:basis-1/3'>
+											{resume.date}
+											<br />
+											<span className='inline-flex items-center px-4 py-2 my-2 text-sm font-bold uppercase bg-white rounded-md md:my-0 md:mt-2 text-lightpurple drop-shadow-sm'>
+												{resume.jobType}
+											</span>
+										</div>
+										<div className='md:basis-2/3'>
+											<h3 className='mb-4 text-2xl font-bold text-white'>
+												{resume.positionName}
+											</h3>
 
-										{resume.href !== "" ? (
-											<a
-												href={resume.href}
-												target='_blank'
-												className='inline-flex items-center w-max'
-											>
+											{resume.href !== "" ? (
+												<a
+													href={resume.href}
+													target='_blank'
+													className='inline-flex items-center w-max'
+												>
+													<span>
+														<BriefcaseIcon className='w-6 mr-2 stroke-2 stroke-white/80' />
+													</span>
+													<p className='items-center text-white/80'>
+														{resume.company}
+													</p>
+													<span>
+														<LinkIcon className='w-4 ml-2 stroke-2 stroke-white/80' />
+													</span>
+												</a>
+											) : (
+												<div className='inline-flex items-center cursor-not-allowed w-max'>
+													<span>
+														<BriefcaseIcon className='w-6 mr-2 stroke-2 stroke-white/80' />
+													</span>
+													<p className='items-center text-white/80'>
+														{resume.company}
+													</p>
+												</div>
+											)}
+											<br />
+											<div className='inline-flex items-center w-max'>
 												<span>
-													<BriefcaseIcon className='w-6 mr-2 stroke-2 stroke-white/80' />
+													<InformationCircleIcon className='w-6 mr-2 stroke-2 stroke-white/80' />
 												</span>
 												<p className='items-center text-white/80'>
-													{resume.company}
-												</p>
-												<span>
-													<LinkIcon className='w-4 ml-2 stroke-2 stroke-white/80' />
-												</span>
-											</a>
-										) : (
-											<div className='inline-flex items-center cursor-not-allowed w-max'>
-												<span>
-													<BriefcaseIcon className='w-6 mr-2 stroke-2 stroke-white/80' />
-												</span>
-												<p className='items-center text-white/80'>
-													{resume.company}
+													{resume.description}
 												</p>
 											</div>
-										)}
-										<br />
-										<div className='inline-flex items-center w-max'>
-											<span>
-												<InformationCircleIcon className='w-6 mr-2 stroke-2 stroke-white/80' />
-											</span>
-											<p className='items-center text-white/80'>
-												{resume.description}
-											</p>
 										</div>
 									</div>
-								</div>
-							</div>
+								</motion.div>
+							</AnimatePresence>
 						))}
-					</motion.div>
+					</div>
 				</motion.div>
 			</div>
 		</section>
