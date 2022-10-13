@@ -3,85 +3,85 @@
 @tailwind utilities;
 
 @layer base {
-	@font-face {
-		font-family: "CoreSans";
-		src: url(/fonts/CoreSans-Light.woff2) format("opentype");
-		font-weight: 300;
-		font-style: normal;
-		font-display: swap;
-	}
-	@font-face {
-		font-family: "CoreSans";
-		src: url(/fonts/CoreSans-Regular.woff2) format("woff2");
-		font-weight: 400;
-		font-style: normal;
-		font-display: swap;
-	}
-	@font-face {
-		font-family: "CoreSans";
-		src: url(/fonts/CoreSans-Medium.woff2) format("woff2");
-		font-weight: 500;
-		font-style: normal;
-		font-display: swap;
-	}
-	@font-face {
-		font-family: "CoreSans";
-		src: url(/fonts/CoreSans-Bold.woff2) format("woff2");
-		font-weight: 700;
-		font-style: normal;
-		font-display: swap;
-	}
-	@font-face {
-		font-family: "CoreSans";
-		src: url(/fonts/CoreSans-ExtraBold.woff2) format("woff2");
-		font-weight: 800;
-		font-style: normal;
-		font-display: swap;
-	}
-	@font-face {
-		font-family: "GalanoGrotesque";
-		src: url(/fonts/GalanoGrotesque-Bold.woff2) format("woff2");
-		font-style: normal;
-		font-display: swap;
-	}
+  @font-face {
+    font-family: 'CoreSans';
+    src: url(/fonts/CoreSans-Light.woff2) format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'CoreSans';
+    src: url(/fonts/CoreSans-Regular.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'CoreSans';
+    src: url(/fonts/CoreSans-Medium.woff2) format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'CoreSans';
+    src: url(/fonts/CoreSans-Bold.woff2) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'CoreSans';
+    src: url(/fonts/CoreSans-ExtraBold.woff2) format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'GalanoGrotesque';
+    src: url(/fonts/GalanoGrotesque-Bold.woff2) format('woff2');
+    font-style: normal;
+    font-display: swap;
+  }
 }
 
 * {
-	font-family: "CoreSans";
-	color: #313639;
+  font-family: 'CoreSans';
+  color: #313639;
 
-	-webkit-tap-highlight-color: transparent;
-	-ms-overflow-style: none;
-	scrollbar-width: none;
+  -webkit-tap-highlight-color: transparent;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 ::-webkit-scrollbar {
-	display: none;
+  display: none;
 }
 
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-	background-color: white;
+  background-color: white;
 }
 
 nav {
-	position: -webkit-sticky;
-	position: sticky;
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 .full-screen {
-	height: calc(100vh);
+  height: calc(100vh);
 }
 
 .h-screen {
-	height: calc(100vh - 84px);
-	height: calc((var(--vh, 1vh) * 100) - 84px);
+  height: calc(100vh - 84px);
+  height: calc((var(--vh, 1vh) * 100) - 84px);
 }
 
 .hero {
-	min-height: calc(100vh - 86px);
-	min-height: calc((var(--vh, 1vh) * 100) - 84px);
+  min-height: calc(100vh - 86px);
+  min-height: calc((var(--vh, 1vh) * 100) - 84px);
 }

@@ -1,7 +1,7 @@
-import React from "react"
+import React from 'react'
 
 function variants() {
-	return <div>variants</div>
+  return <div>variants</div>
 }
 
 export default variants
