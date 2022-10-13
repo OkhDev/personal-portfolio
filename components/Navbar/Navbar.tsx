@@ -1,9 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion"
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect, useRef, forwardRef } from "react"
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline"
 import { useLockedBody } from "usehooks-ts"
 
-import { NavTitle, NavLinks, LetsTalk } from "../constants"
+import { NavTitle, NavLinks, LetsTalk } from "../../constants"
 
 const navTitleVariant = {
 	close: {
@@ -82,12 +82,12 @@ const menuIconVariant = {
 	},
 }
 
-function Navbar() {
+function Navbar({ allRefs }: any): JSX.Element {
 	const [isOpen, setOpen] = useState<Boolean>(false)
 	const [locked, setLocked] = useLockedBody(false)
-	const refAbout = useRef(null)
-	const refProjects = useRef(null)
-	const refContact = useRef(null)
+
+	// const navRefs = forwardRef(allRefs)
+	// console.log(navRefs)
 
 	const handleResize = () => {
 		if (window.innerWidth <= 768) {
@@ -117,9 +117,7 @@ function Navbar() {
 							variants={navTitleVariant}
 							initial={"close"}
 							animate={isOpen ? "open" : "close"}
-							className={`text-3xl font-header ${
-								i === 1 && "text-flatpurple"
-							}`}
+							className={`text-3xl font-header ${i === 1 && "text-flatpurple"}`}
 						>
 							{nav}
 						</motion.span>
@@ -192,10 +190,7 @@ function Navbar() {
 											<span key={i}>
 												{i !== 3 ? (
 													<li className='text-white cursor-pointer'>
-														<a
-															href={nav.href}
-															className='text-2xl font-medium'
-														>
+														<a href={nav.href} className='text-2xl font-medium'>
 															{nav.title}
 														</a>
 													</li>
@@ -204,10 +199,7 @@ function Navbar() {
 														<motion.a
 															href={nav.href}
 															animate={{
-																rotate: [
-																	0, 4, -4, 4,
-																	-4, 0,
-																],
+																rotate: [0, 4, -4, 4, -4, 0],
 															}}
 															transition={{
 																delay: 1,
@@ -235,9 +227,9 @@ function Navbar() {
 				{/* RIGHT OF NAVBAR */}
 				<div className='relative'>
 					<motion.a
-						whileHover={{ borderColor: "#8873EF", x: 8 }}
+						whileHover={{ borderColor: "#b097ff", x: 8 }}
 						href={LetsTalk.href}
-						className='hidden md:inline-flex font-medium cursor-pointer px-6 py-3.5 rounded-3xl border-2 border-lightpurple items-center'
+						className='hidden md:inline-flex font-medium cursor-pointer px-6 py-3.5 rounded-3xl border-2 border-flatpurple items-center'
 					>
 						<span className='mt-[0.15rem]'>{LetsTalk.title}</span>
 						<PaperAirplaneIcon className='ml-3 w-[1.25rem] stroke-[2px]' />

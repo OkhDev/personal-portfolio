@@ -18,7 +18,6 @@ export const NavLinks = [
 		href: "mailto:aokhtenberg@gmail.com",
 	},
 ]
-
 export const LetsTalk = {
 	title: "Let's Talk",
 	href: "mailto:aokhtenberg@gmail.com",
@@ -170,7 +169,7 @@ export const Skill = [
 ]
 
 // PROJECTS COMPONENT
-export const ProjectsTitle = "Latest Projects"
+export const ProjectsTitle = "Web Projects"
 export const Project = [
 	{
 		projectName: "Placeholder",

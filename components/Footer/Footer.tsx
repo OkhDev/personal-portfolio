@@ -1,5 +1,4 @@
-import { HeartIcon } from "@heroicons/react/24/solid"
-import { SocialLinks } from "../constants"
+import { SocialLinks } from "../../constants"
 
 export default function Footer() {
 	return (
@@ -17,7 +16,7 @@ export default function Footer() {
 							className='items-center'
 						>
 							<span className='sr-only'>{item.name}</span>
-							<span className='fill-white'>
+							<span className='fill-white drop-shadow-sm'>
 								<item.icon aria-hidden='true' />
 							</span>
 						</a>

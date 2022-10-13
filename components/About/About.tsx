@@ -13,7 +13,7 @@ import {
 	AboutDescription,
 	Skill,
 	ExperienceResume,
-} from "../constants"
+} from "../../constants"
 
 const loadSkillsVariant = {
 	in: {
@@ -59,7 +59,7 @@ const elementVariant = {
 	},
 }
 
-function About() {
+function About({ ref }: any): JSX.Element {
 	const refTitle = useRef(null)
 	const refSkills = useRef(null)
 	const refExperience = useRef(null)
@@ -77,10 +77,7 @@ function About() {
 	})
 
 	return (
-		<section
-			id='about'
-			className='relative flex pt-4 md:pt-6 bg-flatpurple'
-		>
+		<section ref={ref} className='relative flex bg-flatpurple'>
 			<div className='relative flex flex-col gap-8 px-6 py-12 m-auto md:py-24 md:px-12 max-w-7xl md:gap-16 lg:gap-24 md:flex-row'>
 				<div className='md:basis-1/2'>
 					<motion.div
@@ -101,9 +98,7 @@ function About() {
 							variants={elementVariant}
 							className='flex mb-4 space-x-4 md:mb-8'
 						>
-							<div className='flex-initial w-12 mt-1 text-white'>
-								&#11834;
-							</div>
+							<div className='flex-initial w-12 mt-1 text-white'>&#11834;</div>
 							<p className='font-light leading-loose text-white'>
 								{AboutDescription}
 							</p>
@@ -126,10 +121,9 @@ function About() {
 
 						<ul className='flex flex-wrap gap-4 md:gap-6'>
 							{Skill.map((item, i) => (
-								<AnimatePresence>
+								<AnimatePresence key={i}>
 									<motion.li
 										variants={technologiesVariant}
-										key={i}
 										className='inline-flex items-center px-4 py-3 rounded-md bg-lightpurple w-max drop-shadow-sm'
 									>
 										{/* <item.icon /> */}
@@ -157,12 +151,8 @@ function About() {
 					</motion.h2>
 					<div className='space-y-10'>
 						{ExperienceResume.map((resume, i) => (
-							<AnimatePresence>
-								<motion.div
-									variants={elementVariant}
-									key={i}
-									className='leading-loose'
-								>
+							<AnimatePresence key={i}>
+								<motion.div variants={elementVariant} className='leading-loose'>
 									<hr className='border-white border-[1px] rounded-full mb-4 w-full' />
 									<div className='flex flex-col gap-3 lg:flex-row md:gap-6'>
 										<div className='text-white w-max md:basis-1/3'>

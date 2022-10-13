@@ -8,9 +8,11 @@ import {
 	TitleDescription,
 	ProjectsButton,
 	ScrollDown,
-} from "../constants"
+} from "../../constants"
 import { motion } from "framer-motion"
+import Waves from "../Waves/Waves"
 
+// rename to what it does
 const loadHeroVariant = {
 	in: {
 		y: 0,
@@ -30,7 +32,7 @@ const elementVariant = {
 		y: 0,
 		opacity: "100%",
 		transition: {
-			duration: 1,
+			duration: 0.4,
 		},
 	},
 }
@@ -54,7 +56,7 @@ const subtitleVariant = {
 	},
 }
 
-const Hero = () => {
+const Hero = ({ ref }: any): JSX.Element => {
 	useEffect(() => {
 		document.documentElement.style.setProperty(
 			"--vh",
@@ -62,7 +64,7 @@ const Hero = () => {
 		)
 	})
 	return (
-		<div id='home' className='relative flex flex-grow bg-white'>
+		<main ref={ref} className='relative flex flex-grow bg-white'>
 			<motion.div
 				variants={loadHeroVariant}
 				initial='out'
@@ -83,10 +85,7 @@ const Hero = () => {
 				</motion.p>
 
 				{/* ARIEL OKHTENBERG */}
-				<motion.div
-					variants={elementVariant}
-					className='relative mt-2 mb-4'
-				>
+				<motion.div variants={elementVariant} className='relative mt-2 mb-4'>
 					<h1 className='font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem]'>
 						{NameTitle}
 						<span className='text-flatpurple font-header text-[3.25rem] md:text-6xl lg:text-7xl cursor-pointer'>
@@ -120,10 +119,7 @@ const Hero = () => {
 				</motion.div>
 
 				{/* PERSONAL DESCRIPTION */}
-				<motion.div
-					variants={elementVariant}
-					className='flex my-10 space-x-4'
-				>
+				<motion.div variants={elementVariant} className='flex my-10 space-x-4'>
 					<div className='flex-initial w-12 mt-1'>&#11834;</div>
 					<p className='font-light leading-loose text-flatgray'>
 						{TitleDescription}
@@ -177,7 +173,8 @@ const Hero = () => {
 					</motion.div>
 				</motion.div>
 			</motion.div>
-		</div>
+			<Waves />
+		</main>
 	)
 }
 

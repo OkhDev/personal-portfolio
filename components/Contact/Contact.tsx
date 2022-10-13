@@ -7,7 +7,7 @@ import {
 	ContactDescription,
 	ContactEmail,
 	ContactNote,
-} from "../constants/index"
+} from "../../constants/index"
 
 const loadContactVariant = {
 	in: {
@@ -32,7 +32,7 @@ const elementVariant = {
 	},
 }
 
-function Contact() {
+function Contact({ ref }: any): JSX.Element {
 	const refTitle = useRef(null)
 
 	const isInViewTitle = useInView(refTitle, {
@@ -42,7 +42,7 @@ function Contact() {
 
 	return (
 		<section
-			id='contact'
+			ref={ref}
 			className='relative flex flex-col pt-4 bg-flatpurple md:pt-6'
 		>
 			<motion.div
@@ -62,9 +62,7 @@ function Contact() {
 					variants={elementVariant}
 					className='flex mb-8 space-x-4 md:mb-8'
 				>
-					<div className='flex-initial w-12 mt-1 text-white'>
-						&#11834;
-					</div>
+					<div className='flex-initial w-12 mt-1 text-white'>&#11834;</div>
 					<p className='font-light leading-loose text-white'>
 						{ContactDescription}
 					</p>
