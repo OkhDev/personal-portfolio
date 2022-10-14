@@ -23,7 +23,7 @@ const elementVariant = {
     y: 0,
     opacity: '100%',
     transition: {
-      duration: 0.2,
+      duration: 0.6,
     },
   },
 }
@@ -42,10 +42,8 @@ function Projects(): JSX.Element {
   })
 
   return (
-    <section
-      id="projects"
-      className="relative flex flex-grow py-24 bg-white md:py-48 lg:py-72"
-    >
+    <section className="relative flex flex-grow py-24 bg-white md:py-48 lg:py-72">
+      <span id="projects" className="absolute top-0 md:top-20 lg:top-40"></span>
       <div className="relative flex flex-col items-center m-auto max-w-7xl">
         <motion.div
           ref={refTitle}

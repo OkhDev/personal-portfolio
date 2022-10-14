@@ -114,7 +114,7 @@ function About(): JSX.Element {
           >
             <motion.h3
               variants={elementVariant}
-              className="mb-8 text-4xl text-white font-header"
+              className="mb-8 text-4xl text-white font-header drop-shadow-sm"
             >
               {TechnologiesTitle}
             </motion.h3>
@@ -145,7 +145,7 @@ function About(): JSX.Element {
         >
           <motion.h2
             variants={elementVariant}
-            className="mb-8 text-4xl text-white font-header"
+            className="mb-8 text-4xl text-white font-header drop-shadow-sm"
           >
             {ExperienceTitle}
           </motion.h2>

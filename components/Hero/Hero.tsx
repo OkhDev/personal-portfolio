@@ -18,7 +18,7 @@ const loadHeroVariant = {
   in: {
     y: 0,
     transition: {
-      delayChildren: 1,
+      delayChildren: 0.6,
       staggerChildren: 0.2,
     },
   },
@@ -75,9 +75,9 @@ function Hero(): JSX.Element {
         {/* HELLO MESSAGE */}
         <motion.p
           animate={{
-            rotate: [0, -24, 0, -15, 0, -12],
+            rotate: [0, -24, 0, -12],
             scale: [1.4, 1.0],
-            transition: { duration: 1 },
+            transition: { duration: 0.6 },
           }}
           transition={{ duration: 0.8 }}
           className="text-2xl font-medium text-flatpurple font-body -rotate-12 w-max"
