@@ -42,9 +42,11 @@ function Projects(): JSX.Element {
   })
 
   return (
-    <section className="relative flex flex-grow bg-white">
-      <WavesFlip />
-      <div className="relative flex flex-col items-center py-24 m-auto md:py-48 lg:py-72 max-w-7xl">
+    <section
+      id="projects"
+      className="relative flex flex-grow py-24 bg-white md:py-48 lg:py-72"
+    >
+      <div className="relative flex flex-col items-center m-auto max-w-7xl">
         <motion.div
           ref={refTitle}
           variants={loadProjectsVariant}
@@ -54,7 +56,7 @@ function Projects(): JSX.Element {
         >
           <motion.h1
             variants={elementVariant}
-            className="font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem]"
+            className="font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem] drop-shadow-md"
           >
             {ProjectsTitle}
           </motion.h1>
@@ -134,6 +136,7 @@ function Projects(): JSX.Element {
           ))}
         </motion.div>
       </div>
+      <WavesFlip />
       <Waves />
     </section>
   )

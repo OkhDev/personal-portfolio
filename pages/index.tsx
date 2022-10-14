@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
-// import { useRef } from 'react'
-
 import Head from 'next/head'
+
 import Navbar from '../components/Navbar/Navbar'
 import Hero from '../components/Hero/Hero'
 import About from '../components/About/About'
@@ -10,17 +9,6 @@ import Footer from '../components/Footer/Footer'
 import Contact from '../components/Contact/Contact'
 
 const Home: NextPage = () => {
-  // const refHero = useRef(null)
-  // const refAbout = useRef(null)
-  // const refProjects = useRef(null)
-  // const refContact = useRef(null)
-  // const allRefs = useRef({
-  //   refHero,
-  //   refAbout,
-  //   refProjects,
-  //   refContact,
-  // })
-
   const fontArray = [
     'CoreSans-Light',
     'CoreSans-Regular',

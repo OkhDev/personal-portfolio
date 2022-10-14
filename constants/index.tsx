@@ -1,17 +1,24 @@
 // NAVIGATION COMPONENT
-export const NavTitle = ['Okhtenberg', '.']
+export const NavTitle = {
+  title: ['Okhtenberg', '.'],
+  href: 'home',
+}
+
 export const NavLinks = [
   {
     title: 'About',
-    href: '#about',
+    href: 'about',
+    offset: -110,
   },
   {
     title: 'Projects',
-    href: '#projects',
+    href: 'projects',
+    offset: 0,
   },
   {
     title: 'Contact',
-    href: '#contact',
+    href: 'contact',
+    offset: 0,
   },
   {
     title: "Let's Talk",
@@ -31,7 +38,8 @@ export const TitleDescription =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
 export const ProjectsButton = {
   title: 'Projects',
-  href: '#projects',
+  href: 'projects',
+  offset: 0,
 }
 export const ScrollDown = 'Scroll Down'
 // Icons from https://iconmonstr.com/

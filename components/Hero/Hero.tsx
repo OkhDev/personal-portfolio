@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { ArrowRightIcon, ArrowUpRightIcon } from '@heroicons/react/24/outline'
 import { motion } from 'framer-motion'
+import { Link } from 'react-scroll'
 import {
   SocialLinks,
   Hello,
@@ -64,7 +65,7 @@ function Hero(): JSX.Element {
     )
   })
   return (
-    <main className="relative flex flex-grow bg-white">
+    <main id="home" className="relative flex flex-grow bg-white">
       <motion.div
         variants={loadHeroVariant}
         initial="out"
@@ -86,7 +87,7 @@ function Hero(): JSX.Element {
 
         {/* ARIEL OKHTENBERG */}
         <motion.div variants={elementVariant} className="relative mt-2 mb-4">
-          <h1 className="font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem]">
+          <h1 className="font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem] drop-shadow-md">
             {NameTitle}
             <span className="text-flatpurple font-header text-[3.25rem] md:text-6xl lg:text-7xl cursor-pointer">
               .
@@ -131,23 +132,29 @@ function Hero(): JSX.Element {
           variants={elementVariant}
           className="flex flex-col select-none"
         >
-          <div className="mt-4 mb-10">
-            <a
-              href={ProjectsButton.href}
-              className="items-center px-8 py-5 bg-flatpurple rounded-3xl w-max drop-shadow-sm"
+          <motion.div
+            whileHover={{ scale: 1.05, y: -6 }}
+            className="mt-4 mb-10 w-max"
+          >
+            <Link
+              to={ProjectsButton.href}
+              spy={true}
+              offset={ProjectsButton.offset}
+              duration={500}
+              className="items-center px-8 py-5 cursor-pointer bg-flatpurple rounded-3xl w-max drop-shadow-sm"
             >
               <span className="mt-[0.2rem] text-white inline-flex">
                 {ProjectsButton.title}
                 <ArrowUpRightIcon className="stroke-white stroke-[2px] w-5 ml-2" />
               </span>
-            </a>
-          </div>
+            </Link>
+          </motion.div>
           <div className="z-10 inline-flex space-x-4">
             {SocialLinks.map((item, i) => (
               <motion.a
                 whileHover={{
-                  y: -6,
                   scale: 1.05,
+                  y: -6,
                 }}
                 key={i}
                 target="_blank"

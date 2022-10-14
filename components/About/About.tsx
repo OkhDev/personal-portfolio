@@ -77,7 +77,7 @@ function About(): JSX.Element {
   })
 
   return (
-    <section className="relative flex bg-flatpurple">
+    <section id="about" className="relative flex bg-flatpurple">
       <div className="relative flex flex-col gap-8 px-6 py-12 m-auto md:py-24 md:px-12 max-w-7xl md:gap-16 lg:gap-24 md:flex-row">
         <div className="md:basis-1/2">
           <motion.div
@@ -89,7 +89,7 @@ function About(): JSX.Element {
             {/* TITLE */}
             <motion.h1
               variants={elementVariant}
-              className="font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem] text-white mb-8 w-full"
+              className="font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem] text-white mb-8 w-full drop-shadow-md"
             >
               {AboutTitle}
             </motion.h1>

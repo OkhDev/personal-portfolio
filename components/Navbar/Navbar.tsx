@@ -1,7 +1,9 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import React, { useState, useEffect } from 'react'
-import { PaperAirplaneIcon } from '@heroicons/react/24/outline'
+import { useState, useEffect } from 'react'
+import { Link } from 'react-scroll'
 import { useLockedBody } from 'usehooks-ts'
+import { PaperAirplaneIcon } from '@heroicons/react/24/outline'
+// import { MoonIcon, SunIcon } from '@heroicons/react/24/solid'
 
 import { NavTitle, NavLinks, LetsTalk } from '../../constants'
 
@@ -85,12 +87,11 @@ const menuIconVariant = {
 function Navbar(): JSX.Element {
   const [isOpen, setOpen] = useState<boolean>(false)
   const [locked, setLocked] = useLockedBody(false)
-
-  // const navRefs = forwardRef(allRefs)
-  // console.log(navRefs)
+  // const { isDarkMode, toggle } = useDarkMode()
 
   const handleResize = () => {
-    if (window.innerWidth <= 768) {
+    const windowWidth = window.innerWidth
+    if (windowWidth <= 768) {
       setOpen(false)
       setLocked(false)
     }
@@ -109,39 +110,49 @@ function Navbar(): JSX.Element {
     <nav className="sticky top-0 left-0 right-0 z-40 px-6 py-6 mx-auto tracking-wide bg-white select-none overflow-x-clip md:px-12">
       <div className="flex items-center justify-between w-full mx-auto max-w-7xl">
         {/* LEFT OF NAVBAR */}
-
-        <a href="#home" className="cursor-pointer z-[2]">
-          {NavTitle.map((nav, i) => (
-            <motion.span
-              key={i}
-              variants={navTitleVariant}
-              initial="close"
-              animate={isOpen ? 'open' : 'close'}
-              className={`text-3xl font-header ${i === 1 && 'text-flatpurple'}`}
-            >
-              {nav}
-            </motion.span>
-          ))}
-        </a>
+        <motion.div whileHover={{ scale: 1.05 }} className="z-[2]">
+          <Link to={NavTitle.href} spy={true} offset={-106} duration={500}>
+            {NavTitle.title.map((nav, i) => (
+              <motion.span
+                key={i}
+                variants={navTitleVariant}
+                initial="close"
+                animate={isOpen ? 'open' : 'close'}
+                className={`text-3xl cursor-pointer font-header ${
+                  i === 1 && 'text-flatpurple'
+                }`}
+              >
+                {NavTitle.title[i]}
+              </motion.span>
+            ))}
+          </Link>
+        </motion.div>
 
         {/* MIDDLE OF NAVBAR */}
         <div className="hidden gap-8 align-middle cursor-pointer lg:gap-12 md:inline-flex">
           {NavLinks.map((nav, i) => (
             <span key={i}>
               {i !== 3 && (
-                <motion.a
-                  href={nav.href}
+                <motion.div
                   initial="rest"
                   whileHover="hover"
                   animate="rest"
                   className="relative w-max"
                 >
-                  {nav.title}
-                  <motion.span
-                    variants={underlineVariant}
-                    className="absolute bg-flatpurple/30 h-1 left-0 -bottom-1 -z-[1]"
-                  />
-                </motion.a>
+                  <Link
+                    to={nav.href}
+                    spy={true}
+                    offset={nav.offset}
+                    duration={500}
+                  >
+                    {nav.title}
+
+                    <motion.span
+                      variants={underlineVariant}
+                      className="absolute bg-flatpurple/30 h-1 left-0 -bottom-1 -z-[1]"
+                    />
+                  </Link>
+                </motion.div>
               )}
             </span>
           ))}
@@ -190,9 +201,16 @@ function Navbar(): JSX.Element {
                       <span key={i}>
                         {i !== 3 ? (
                           <li className="text-white cursor-pointer">
-                            <a href={nav.href} className="text-2xl font-medium">
+                            <Link
+                              to={nav.href}
+                              spy={true}
+                              offset={nav.offset}
+                              duration={500}
+                              className="text-2xl font-medium"
+                              onClick={triggerToggle}
+                            >
                               {nav.title}
-                            </a>
+                            </Link>
                           </li>
                         ) : (
                           <li>
@@ -225,11 +243,24 @@ function Navbar(): JSX.Element {
         </div>
 
         {/* RIGHT OF NAVBAR */}
-        <div className="relative">
+        <div className="relative items-center hidden md:inline-flex">
+          {/* DARK MODE TOGGLE */}
+          {/* <motion.span
+            initial={{ backgroundColor: '#8873EF' }}
+            whileHover={{ backgroundColor: '#b097ff' }}
+            onClick={toggle}
+            className="absolute right-0 p-3 cursor-pointer top-20 rounded-2xl"
+          >
+            {isDarkMode ? (
+              <MoonIcon className="w-6 stroke-[2px] fill-white" />
+            ) : (
+              <SunIcon className="w-6 stroke-[2px] fill-white" />
+            )}
+          </motion.span> */}
           <motion.a
             whileHover={{ borderColor: '#b097ff', x: 8 }}
             href={LetsTalk.href}
-            className="hidden md:inline-flex font-medium cursor-pointer px-6 py-3.5 rounded-3xl border-2 border-flatpurple items-center"
+            className="inline-flex font-medium cursor-pointer px-6 py-3.5 rounded-3xl border-2 border-flatpurple items-center"
           >
             <span className="mt-[0.15rem]">{LetsTalk.title}</span>
             <PaperAirplaneIcon className="ml-3 w-[1.25rem] stroke-[2px]" />

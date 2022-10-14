@@ -41,7 +41,10 @@ function Contact(): JSX.Element {
   })
 
   return (
-    <section className="relative flex flex-col pt-4 bg-flatpurple md:pt-6">
+    <section
+      id="contact"
+      className="relative flex flex-col pt-4 bg-flatpurple md:pt-6"
+    >
       <motion.div
         variants={loadContactVariant}
         initial={!isInViewTitle && 'out'}
@@ -51,7 +54,7 @@ function Contact(): JSX.Element {
         <motion.h1
           ref={refTitle}
           variants={elementVariant}
-          className="font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem] text-white mb-8"
+          className="font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem] text-white mb-8 drop-shadow-md"
         >
           {ContactTitle}
         </motion.h1>
