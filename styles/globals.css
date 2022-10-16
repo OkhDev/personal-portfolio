@@ -63,10 +63,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  background-color: white;
-}
-
 nav {
   position: -webkit-sticky;
   position: sticky;

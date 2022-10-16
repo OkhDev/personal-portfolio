@@ -29,7 +29,7 @@ const HelloText = styled(motion.p)`
   ${tw`text-2xl font-medium text-flatpurple font-body -rotate-12 w-max`}
 `
 const HeaderSection = styled(motion.div)`
-  ${tw`relative mt-2 mb-4`}
+  ${tw`relative mt-3 mb-4`}
 `
 const HeaderTitle = styled.h1`
   ${tw`font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem] h-full`}
