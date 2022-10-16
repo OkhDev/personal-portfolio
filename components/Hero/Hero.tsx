@@ -1,61 +1,57 @@
 import { useEffect } from 'react'
-import { ArrowRightIcon, ArrowUpRightIcon } from '@heroicons/react/24/outline'
 import { motion } from 'framer-motion'
-import { Link } from 'react-scroll'
+import styled from 'styled-components'
+import tw from 'twin.macro'
+
+import Waves from '../Waves/Waves'
+import HeroSocialButtons from './HeroSocialButtons'
+import HeroSubtitle from './HeroSubtitle'
+import { ArrowRightIcon } from '@heroicons/react/24/outline'
 import {
-  SocialLinks,
   Hello,
   NameTitle,
-  Profession,
   TitleDescription,
-  ProjectsButton,
-  ScrollDown,
+  ScrollDownMessage,
 } from '../../constants'
-import Waves from '../Waves/Waves'
+import { InitialHeroSetup, LoadHeroElements } from '../../utils/variants'
 
-// rename to what it does
-const loadHeroVariant = {
-  in: {
-    y: 0,
-    transition: {
-      delayChildren: 0.6,
-      staggerChildren: 0.2,
-    },
-  },
-}
-
-const elementVariant = {
-  out: {
-    y: 40,
-    opacity: 0,
-  },
-  in: {
-    y: 0,
-    opacity: '100%',
-    transition: {
-      duration: 0.4,
-    },
-  },
-}
-
-const subtitleVariant = {
-  rest: {
-    height: '0.25rem',
-    transition: {
-      duration: 0.2,
-      type: 'tween',
-      ease: 'easeIn',
-    },
-  },
-  hover: {
-    height: '2rem',
-    transition: {
-      duration: 0.2,
-      type: 'tween',
-      ease: 'easeIn',
-    },
-  },
-}
+const HeroMain = styled.main`
+  ${tw`relative flex flex-grow bg-white`}
+`
+const HeroLayout = styled(motion.div)`
+  ${tw`relative flex flex-col justify-center w-full px-6 mx-auto md:px-12 max-w-7xl`}
+  & {
+    min-height: calc(100vh - 86px);
+    min-height: calc((var(--vh, 1vh) * 100) - 84px);
+  }
+`
+const HelloText = styled(motion.p)`
+  ${tw`text-2xl font-medium text-flatpurple font-body -rotate-12 w-max`}
+`
+const HeaderSection = styled(motion.div)`
+  ${tw`relative mt-2 mb-4`}
+`
+const HeaderTitle = styled.h1`
+  ${tw`font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem] h-full`}
+`
+const HeaderPeriod = styled.span`
+  ${tw`text-flatpurple font-header text-[3.25rem] md:text-6xl lg:text-7xl cursor-pointer`}
+`
+const SubtitleSection = styled(motion.div)`
+  ${tw`flex mt-8 mb-10 space-x-4`}
+`
+const LeftDash = styled.div`
+  ${tw`flex-initial w-12 mt-1`}
+`
+const SubtitleText = styled.p`
+  ${tw`font-light leading-loose text-flatgray`}
+`
+const ButtonSection = styled(motion.div)`
+  ${tw`flex flex-col select-none`}
+`
+const ScrollDown = styled(motion.div)`
+  ${tw`absolute inline-flex text-sm font-light rotate-90 select-none bottom-32 md:bottom-64 -right-4 w-max text-flatgray/60 md:right-12`}
+`
 
 function Hero(): JSX.Element {
   useEffect(() => {
@@ -65,123 +61,50 @@ function Hero(): JSX.Element {
     )
   })
   return (
-    <main id="home" className="relative flex flex-grow bg-white">
-      <motion.div
-        variants={loadHeroVariant}
-        initial="out"
-        animate="in"
-        className="relative flex flex-col justify-center w-full px-6 mx-auto hero md:px-12 max-w-7xl"
-      >
-        {/* HELLO MESSAGE */}
-        <motion.p
+    <HeroMain id="home">
+      <HeroLayout variants={InitialHeroSetup} initial="out" animate="in">
+        <HelloText
           animate={{
             rotate: [0, -24, 0, -12],
             scale: [1.4, 1.0],
             transition: { duration: 0.6 },
           }}
           transition={{ duration: 0.8 }}
-          className="text-2xl font-medium text-flatpurple font-body -rotate-12 w-max"
+          className="drop-shadow-sm"
         >
           {Hello}
-        </motion.p>
+        </HelloText>
 
         {/* ARIEL OKHTENBERG */}
-        <motion.div variants={elementVariant} className="relative mt-2 mb-4">
-          <h1 className="font-header text-[3.25rem] md:text-6xl lg:text-7xl leading-[3.5rem] drop-shadow-md">
+        <HeaderSection variants={LoadHeroElements}>
+          <HeaderTitle className="drop-shadow-md">
             {NameTitle}
-            <span className="text-flatpurple font-header text-[3.25rem] md:text-6xl lg:text-7xl cursor-pointer">
-              .
-            </span>
-          </h1>
-        </motion.div>
+            <HeaderPeriod>.</HeaderPeriod>
+          </HeaderTitle>
+        </HeaderSection>
 
-        {/* WEB DEVELOPER & GRAPHIC DESIGNER */}
-        <motion.div
-          variants={elementVariant}
-          className="inline-flex text-lg md:text-xl text-flatgray"
-        >
-          {Profession.map((profession, i) => (
-            <span className="inline-flex" key={i}>
-              <motion.div
-                initial="rest"
-                whileHover="hover"
-                animate="rest"
-                className="relative w-max z-[2]"
-              >
-                <h3 className="text-flatgray">{profession}</h3>
-                <motion.span
-                  variants={subtitleVariant}
-                  className="absolute bottom-0 left-0 w-full h-1 bg-flatpurple/30 -z-[1]"
-                />
-              </motion.div>
-              {i === 0 && <span>&nbsp;&amp;&nbsp;</span>}
-            </span>
-          ))}
-        </motion.div>
+        <HeroSubtitle />
 
-        {/* PERSONAL DESCRIPTION */}
-        <motion.div variants={elementVariant} className="flex my-10 space-x-4">
-          <div className="flex-initial w-12 mt-1">&#11834;</div>
-          <p className="font-light leading-loose text-flatgray">
-            {TitleDescription}
-          </p>
-        </motion.div>
+        <SubtitleSection variants={LoadHeroElements}>
+          <LeftDash>&#11834;</LeftDash>
+          <SubtitleText>{TitleDescription}</SubtitleText>
+        </SubtitleSection>
 
-        {/* HERO BUTTONS/LINKS */}
-        <motion.div
-          variants={elementVariant}
-          className="flex flex-col select-none"
-        >
-          <motion.div
-            whileHover={{ scale: 1.05, y: -6 }}
-            className="mt-4 mb-10 w-max"
-          >
-            <Link
-              to={ProjectsButton.href}
-              spy={true}
-              offset={ProjectsButton.offset}
-              duration={500}
-              className="items-center px-8 py-5 cursor-pointer bg-flatpurple rounded-3xl w-max drop-shadow-sm"
-            >
-              <span className="mt-[0.2rem] text-white inline-flex">
-                {ProjectsButton.title}
-                <ArrowUpRightIcon className="stroke-white stroke-[2px] w-5 ml-2" />
-              </span>
-            </Link>
-          </motion.div>
-          <div className="z-10 inline-flex space-x-4">
-            {SocialLinks.map((item, i) => (
-              <motion.a
-                whileHover={{
-                  scale: 1.05,
-                  y: -6,
-                }}
-                key={i}
-                target="_blank"
-                href={item.href}
-                className="items-center px-6 py-5 bg-offwhite rounded-3xl drop-shadow-sm"
-              >
-                <span className="sr-only">{item.name}</span>
-                <span className="fill-flatblack">
-                  <item.icon aria-hidden="true" />
-                </span>
-              </motion.a>
-            ))}
-          </div>
-          {/* SCROLL DOWN MESSAGE */}
-          <motion.div
+        <ButtonSection variants={LoadHeroElements}>
+          <HeroSocialButtons />
+
+          <ScrollDown
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2.4, duration: 1 }}
-            className="absolute inline-flex text-sm font-light rotate-90 select-none bottom-32 md:bottom-64 -right-4 w-max text-flatgray/60 md:right-12"
           >
-            {ScrollDown}{' '}
+            {ScrollDownMessage}{' '}
             <ArrowRightIcon className="w-4 ml-4 stroke-flatgray/60" />
-          </motion.div>
-        </motion.div>
-      </motion.div>
+          </ScrollDown>
+        </ButtonSection>
+      </HeroLayout>
       <Waves />
-    </main>
+    </HeroMain>
   )
 }
 

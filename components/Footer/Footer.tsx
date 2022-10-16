@@ -1,13 +1,29 @@
+import styled from 'styled-components'
+import tw from 'twin.macro'
+
 import { SocialLinks } from '../../constants'
+
+const FooterContainer = styled.footer`
+  ${tw`relative flex pt-4 md:pt-6 bg-flatpurple`}
+`
+const FooterLayout = styled.div`
+  ${tw`relative flex flex-col items-center justify-between w-full gap-8 pt-6 pb-12 m-auto md:px-12 md:flex-row max-w-7xl`}
+`
+const LeftFooter = styled.div`
+  ${tw`inline-flex items-center text-center text-white md:text-left`}
+`
+const RightFooter = styled.div`
+  ${tw`inline-flex gap-12 text-white`}
+`
 
 export default function Footer() {
   return (
-    <footer className="relative flex pt-4 md:pt-6 bg-flatpurple">
-      <div className="relative flex flex-col items-center justify-between w-full gap-8 pt-6 pb-12 m-auto md:px-12 md:flex-row max-w-7xl">
-        <div className="inline-flex items-center text-center text-white md:text-left">
+    <FooterContainer>
+      <FooterLayout>
+        <LeftFooter>
           &copy; All rights reserved &middot; By Ariel Okhtenberg
-        </div>
-        <div className="inline-flex gap-12 text-white">
+        </LeftFooter>
+        <RightFooter>
           {SocialLinks.map((item, i) => (
             <a
               key={i}
@@ -22,8 +38,8 @@ export default function Footer() {
               </span>
             </a>
           ))}
-        </div>
-      </div>
-    </footer>
+        </RightFooter>
+      </FooterLayout>
+    </FooterContainer>
   )
 }

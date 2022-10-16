@@ -72,16 +72,7 @@ nav {
   position: sticky;
 }
 
-.full-screen {
-  height: calc(100vh);
-}
-
 .h-screen {
   height: calc(100vh - 84px);
   height: calc((var(--vh, 1vh) * 100) - 84px);
-}
-
-.hero {
-  min-height: calc(100vh - 86px);
-  min-height: calc((var(--vh, 1vh) * 100) - 84px);
 }

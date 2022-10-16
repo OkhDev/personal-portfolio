@@ -1,4 +1,4 @@
-// NAVIGATION COMPONENT
+// !!! NAVIGATION COMPONENT
 export const NavTitle = {
   title: ['Okhtenberg', '.'],
   href: 'home',
@@ -30,10 +30,10 @@ export const LetsTalk = {
   href: 'mailto:aokhtenberg@gmail.com',
 }
 
-// HERO COMPONENT
+// !!! HERO COMPONENT
 export const Hello = 'Hello!'
 export const NameTitle = 'I am Ariel Okhtenberg'
-export const Profession = ['Web Developer', 'Graphic Designer']
+export const Profession = ['Front-end Web Developer', 'Graphic Designer']
 export const TitleDescription =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
 export const ProjectsButton = {
@@ -41,7 +41,7 @@ export const ProjectsButton = {
   href: 'projects',
   offset: 0,
 }
-export const ScrollDown = 'Scroll Down'
+export const ScrollDownMessage = 'Scroll Down'
 // Icons from https://iconmonstr.com/
 export const SocialLinks = [
   {
@@ -88,7 +88,7 @@ export const SocialLinks = [
   },
 ]
 
-// ABOUT COMPONENT
+// !!! ABOUT COMPONENT
 export const AboutTitle = 'About Me'
 export const TechnologiesTitle = 'Technologies'
 export const ExperienceTitle = 'Experience'
@@ -160,7 +160,7 @@ export const Skill = [
     skill: 'MongoDB',
   },
   {
-    skill: 'SQL',
+    skill: 'MySQL',
   },
   {
     skill: 'Jest',
@@ -176,7 +176,7 @@ export const Skill = [
   },
 ]
 
-// PROJECTS COMPONENT
+// !!! PROJECTS COMPONENT
 export const ProjectsTitle = 'Web Projects'
 export const Project = [
   {
@@ -229,7 +229,7 @@ export const Project = [
   },
 ]
 
-// CONTACT COMPONENT
+// !!! CONTACT COMPONENT
 export const ContactTitle = 'Contact Me'
 export const ContactEmail = {
   email: 'aokhtenberg@gmail.com',
