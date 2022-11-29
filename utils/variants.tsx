@@ -56,7 +56,6 @@ export const NavMenuButton = {
     scale: 1.6,
     x: -4,
     rotate: 0,
-    stroke: '#8873EF',
     transition: {
       duration: 0.4,
       type: 'tween',
@@ -67,7 +66,6 @@ export const NavMenuButton = {
     scale: 1.6,
     x: -4,
     rotate: 180,
-    stroke: '#fff',
     transition: {
       duration: 0.4,
       type: 'tween',
@@ -81,8 +79,7 @@ export const InitialHeroSetup = {
   in: {
     y: 0,
     transition: {
-      delayChildren: 0.6,
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
 }
@@ -96,7 +93,7 @@ export const LoadHeroElements = {
     y: 0,
     opacity: '100%',
     transition: {
-      duration: 0.4,
+      duration: 0.3,
     },
   },
 }
@@ -137,7 +134,7 @@ export const SingleTechElementLoad = {
   in: {
     scale: 1,
     transition: {
-      duration: 0.4,
+      duration: 0.3,
     },
   },
 }
@@ -147,7 +144,7 @@ export const InitialSetup = {
   in: {
     y: 0,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
 }
@@ -161,7 +158,7 @@ export const LoadElements = {
     y: 0,
     opacity: '100%',
     transition: {
-      duration: 0.6,
+      duration: 0.3,
     },
   },
 }

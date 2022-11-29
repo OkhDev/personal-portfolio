@@ -2,11 +2,11 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import Navbar from '../components/Navbar/Navbar'
-import Hero from '../components/Hero/Hero'
+import Hero from '../components/Hero'
 import About from '../components/About/About'
 import Projects from '../components/Projects/Projects'
-import Footer from '../components/Footer/Footer'
-import Contact from '../components/Contact/Contact'
+import Footer from '../components/Footer'
+import Contact from '../components/Contact'
 
 const Home: NextPage = () => {
   const fontArray = [
@@ -21,7 +21,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Okhtenberg Portfolio</title>
+        <title>Ariel Okhtenberg</title>
         <meta charSet="utf-8" />
         <meta
           name="viewport"
@@ -33,7 +33,7 @@ const Home: NextPage = () => {
         />
         <meta
           name="description"
-          content="Okhtenberg's personal front-end web portfolio."
+          content="Okhtenberg's personal front-end web portfolio showcasing the projects that Ariel has developed."
         />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         {fontArray.map((font, i) => (

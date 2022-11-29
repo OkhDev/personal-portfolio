@@ -4,7 +4,6 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
-  darkMode: 'class',
   theme: {
     fontFamily: {
       header: ['GalanoGrotesque', 'sans-serif'],
@@ -14,11 +13,9 @@ module.exports = {
       colors: {
         offwhite: '#F6F6F6',
         flatblack: '#313639',
-        flatgray: '#4B4A4E',
-        flatpurple: '#8873EF',
+        gray: '#4B4A4E',
+        purple: '#8873EF',
         lightpurple: '#b097ff',
-        flatorange: '#FE481C',
-        flatblue: '#5562FF',
       },
     },
   },

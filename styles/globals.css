@@ -44,31 +44,29 @@
     font-style: normal;
     font-display: swap;
   }
+
+  * {
+    font-family: 'CoreSans';
+    -webkit-tap-highlight-color: transparent;
+    -ms-overflow-style: none;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  ::selection {
+    background: #cabaff78;
+  }
+
+  html {
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    color: #313639;
+  }
 }
 
-* {
-  font-family: 'CoreSans';
-  color: #313639;
-
-  -webkit-tap-highlight-color: transparent;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-nav {
-  position: -webkit-sticky;
-  position: sticky;
-}
-
-.h-screen {
+/* .h-screen {
   height: calc(100vh - 84px);
   height: calc((var(--vh, 1vh) * 100) - 84px);
-}
+} */

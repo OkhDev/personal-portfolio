@@ -1,4 +1,6 @@
-// !!! NAVIGATION COMPONENT
+import { FaLinkedin, FaGithub, FaDribbble } from 'react-icons/fa'
+
+// !!! NAVIGATION
 export const NavTitle = {
   title: ['Okhtenberg', '.'],
   href: 'home',
@@ -8,96 +10,82 @@ export const NavLinks = [
   {
     title: 'About',
     href: 'about',
-    offset: -110,
+    offset: -70,
   },
   {
     title: 'Projects',
     href: 'projects',
-    offset: 0,
+    offset: -50,
   },
   {
     title: 'Contact',
     href: 'contact',
     offset: 0,
   },
-  {
-    title: "Let's Talk",
-    href: 'mailto:aokhtenberg@gmail.com',
-  },
 ]
-export const LetsTalk = {
-  title: "Let's Talk",
-  href: 'mailto:aokhtenberg@gmail.com',
-}
 
-// !!! HERO COMPONENT
-export const Hello = 'Hello!'
-export const NameTitle = 'I am Ariel Okhtenberg'
+// !!! HERO
+export const Hello = 'Hi, my name is'
+export const NameTitle = 'Ariel Okhtenberg'
 export const Profession = ['Front-end Web Developer', 'Graphic Designer']
 export const TitleDescription =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-export const ProjectsButton = {
-  title: 'Projects',
-  href: 'projects',
-  offset: 0,
-}
-export const ScrollDownMessage = 'Scroll Down'
-// Icons from https://iconmonstr.com/
+  "I'm a front-end developer with a background of graphic design, specializing in building simplistic digital experiences. Throughout the last few years, I have indulged in expanding my knowledge of web technologies and designing numerous web projects."
 export const SocialLinks = [
   {
     name: 'LinkedIn',
     href: 'https://www.linkedin.com/in/arielokh/',
-    icon: () => (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-      >
-        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-      </svg>
-    ),
+    Icon: FaLinkedin,
   },
   {
     name: 'GitHub',
     href: 'https://github.com/OkhDev',
-    icon: () => (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-      >
-        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-      </svg>
-    ),
+    Icon: FaGithub,
   },
   {
     name: 'Dribbble',
     href: 'https://dribbble.com/okhtenberg',
-    icon: () => (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-      >
-        <path d="M12 0c-6.628 0-12 5.373-12 12s5.372 12 12 12 12-5.373 12-12-5.372-12-12-12zm9.885 11.441c-2.575-.422-4.943-.445-7.103-.073-.244-.563-.497-1.125-.767-1.68 2.31-1 4.165-2.358 5.548-4.082 1.35 1.594 2.197 3.619 2.322 5.835zm-3.842-7.282c-1.205 1.554-2.868 2.783-4.986 3.68-1.016-1.861-2.178-3.676-3.488-5.438.779-.197 1.591-.314 2.431-.314 2.275 0 4.368.779 6.043 2.072zm-10.516-.993c1.331 1.742 2.511 3.538 3.537 5.381-2.43.715-5.331 1.082-8.684 1.105.692-2.835 2.601-5.193 5.147-6.486zm-5.44 8.834l.013-.256c3.849-.005 7.169-.448 9.95-1.322.233.475.456.952.67 1.432-3.38 1.057-6.165 3.222-8.337 6.48-1.432-1.719-2.296-3.927-2.296-6.334zm3.829 7.81c1.969-3.088 4.482-5.098 7.598-6.027.928 2.42 1.609 4.91 2.043 7.46-3.349 1.291-6.953.666-9.641-1.433zm11.586.43c-.438-2.353-1.08-4.653-1.92-6.897 1.876-.265 3.94-.196 6.199.196-.437 2.786-2.028 5.192-4.279 6.701z" />
-      </svg>
-    ),
+    Icon: FaDribbble,
   },
 ]
 
-// !!! ABOUT COMPONENT
+// !!! ABOUT
 export const AboutTitle = 'About Me'
+export const AboutDescriptionP1 =
+  'Hello! My name is Ariel and I enjoy bridging the gap between web development and graphic design, combining my technical knowledge with my keen eye for design to produce a visually appealing product. I graduated New York University with a major in Economics and minored in Web Development and Mathematics. Throughout the last few years, I have been learning and challenging myself with different projects ranging from creating websites to logo branding for the sole purpose to fulfill personal growth and satisfaction.'
+export const AboutDescriptionP2 =
+  'My interest in web development started in high school while taking computer science to learn Java. Although Java and HTML are not the same, it peaked my interest to see how websites were built and thereafter, I started to read source code, dissect websites, and build my own websites using HTML, CSS, and vanilla JavaScript. On the other hand, my interest in graphic design started towards the end of middle school. At a young age, YouTube was my source of entertainment and not only was I using it to learn how to design but it also showed me the elaborate thumbnails created for each video. Soon after, I started trying to design my own thumbnails and ever since then, graphic design has been gratifying.'
+
 export const TechnologiesTitle = 'Technologies'
+export const Skills = [
+  'TypeScript',
+  'Next.js',
+  'React',
+  'NextAuth',
+  'Firebase',
+  'Supabase',
+  'AWS',
+  'Recoil',
+  'Redux',
+  'jQuery',
+  'SQLite',
+  'PostgreSQL',
+  'MySQL',
+  'GraphQL',
+  'Prisma',
+  'Jest',
+  'Cypress',
+  'MongoDB',
+  'Node.js',
+  'Express',
+  'Python',
+  'Flask',
+]
+
 export const ExperienceTitle = 'Experience'
-export const AboutDescription =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet dictum sit amet justo donec enim. Erat pellentesque adipiscing commodo elit.'
 export const ExperienceResume = [
   {
     date: 'Jan 2022 - Present',
-    positionName: 'Front-end Web Developer & Graphic Designer',
+    positionName: 'Front-end Web Developer & Design Manager',
     jobType: 'Full-time',
     company: 'Voxels NFT (by Voxelverse)',
     href: 'https://voxels-nft.com/',
@@ -120,121 +108,106 @@ export const ExperienceResume = [
     description: 'Custom Sports Apparel Company',
   },
 ]
-export const Skill = [
+
+export const CertsTitle = 'Certificates'
+export const AllCerts = [
   {
-    skill: 'TypeScript',
-    icon: () => (
-      <svg
-        width="24px"
-        height="24px"
-        viewBox="0 0 24 24"
-        role="img"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M0 12v12h24V0H0zm19.341-.956c.61.152 1.074.423 1.501.865.221.236.549.666.575.77.008.03-1.036.73-1.668 1.123-.023.015-.115-.084-.217-.236-.31-.45-.633-.644-1.128-.678-.728-.05-1.196.331-1.192.967a.88.88 0 0 0 .102.45c.16.331.458.53 1.39.933 1.719.74 2.454 1.227 2.911 1.92.51.773.625 2.008.278 2.926-.38.998-1.325 1.676-2.655 1.9-.411.073-1.386.062-1.828-.018-.964-.172-1.878-.648-2.442-1.273-.221-.243-.652-.88-.625-.925.011-.016.11-.077.22-.141.108-.061.511-.294.892-.515l.69-.4.145.214c.202.308.643.731.91.872.766.404 1.817.347 2.335-.118a.883.883 0 0 0 .313-.72c0-.278-.035-.4-.18-.61-.186-.266-.567-.49-1.649-.96-1.238-.533-1.771-.864-2.259-1.39a3.165 3.165 0 0 1-.659-1.2c-.091-.339-.114-1.189-.042-1.531.255-1.197 1.158-2.03 2.461-2.278.423-.08 1.406-.05 1.821.053zm-5.634 1.002l.008.983H10.59v8.876H8.38v-8.876H5.258v-.964c0-.534.011-.98.026-.99.012-.016 1.913-.024 4.217-.02l4.195.012z" />
-      </svg>
-    ),
+    title: 'Web Developer Bootcamp',
+    href: 'https://www.udemy.com/certificate/UC-b1e8a73f-ea1d-40b3-829f-e3e2a1f983b4/',
   },
   {
-    skill: 'React',
+    title: 'Modern React with Redux',
+    href: 'https://www.udemy.com/certificate/UC-31075d34-3d8a-42b6-b76d-7da671c9a963/',
   },
   {
-    skill: 'Next.js',
+    title: 'Mastering TypeScript',
+    href: 'https://www.udemy.com/certificate/UC-273222c3-20b1-4445-8d6b-9fae834073e1/',
   },
   {
-    skill: 'Redux',
+    title: 'Testing Next.js Apps',
+    href: 'https://www.udemy.com/certificate/UC-f5247daf-4443-415f-a9bf-32722b74b5a2/',
   },
   {
-    skill: 'Node.js',
+    title: 'What is Data Science?',
+    href: 'https://www.coursera.org/account/accomplishments/certificate/K2CHA8DDBHUQ',
   },
   {
-    skill: 'jQuery',
-  },
-  {
-    skill: 'AWS',
-  },
-  {
-    skill: 'Express',
-  },
-  {
-    skill: 'MongoDB',
-  },
-  {
-    skill: 'MySQL',
-  },
-  {
-    skill: 'Jest',
-  },
-  {
-    skill: 'Cypress',
-  },
-  {
-    skill: 'GraphQL',
-  },
-  {
-    skill: 'PostgreSQL',
+    title: 'Tools for Data Science',
+    href: 'https://www.coursera.org/account/accomplishments/certificate/2MZCRWS8DTXW',
   },
 ]
 
-// !!! PROJECTS COMPONENT
-export const ProjectsTitle = 'Web Projects'
+// !!! PROJECTS
+export const ProjectsTitle = 'Projects'
 export const Project = [
   {
-    projectName: 'Placeholder',
+    projectName: 'WeeBuddy',
     projectDescription:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet dictum sit amet justo donec enim.',
-    projectWebsite: '',
-    projectGithub: '',
+      'A web app made to allow users to track their pets bathroom habits. Using Firebase storage, users are able to create, read, update, and delete logs - that includes uploading images, viewing when the log was last updated, as well searching through all the logs.',
+    projectWebsite: 'https://weebuddy-app.vercel.app/',
+    projectGithub: 'https://github.com/OkhDev/weebuddy',
     technologiesUsed: [
-      'Placeholder',
-      'Placeholder',
-      'Placeholder',
-      'Placeholder',
+      'Next.js',
+      'TypeScript',
+      'Firebase',
+      'Recoil',
+      'NextAuth',
+      'Tailwind',
+      'Framer Motion',
     ],
-    imageSrc: 'https://via.placeholder.com/960x540.png?text=Placeholder',
-    imageAlt: 'placeholder',
+    imageSrc: '/images/weebuddy.png',
+    imageAlt: 'weebuddy image',
+    ariaLabelGithub: 'Visit GitHub repository to WeeBuddy',
+    ariaLabelWebsite: 'Visit WeeBuddy Website',
   },
   {
-    projectName: 'Placeholder',
+    projectName: 'Ludlow43 Rebuild',
     projectDescription:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet dictum sit amet justo donec enim.',
-    projectWebsite: '',
-    projectGithub: '',
+      'This website is representing an apartment building in Philadelphia. The owner of the original website challenged me to rebuild their website and to do so within ONE DAY. Their main goal was to make sure the website delivers data to the user quickly, as well as to utilize Next.js within the build. They wanted to make sure that if a user were to access a specific page, given a link, the page would use as few resources as possible. All images and website layout were given to me by the owner to use.',
+    projectWebsite: 'https://ludlow43.vercel.app/',
+    projectGithub: 'https://github.com/OkhDev/ludlow43',
     technologiesUsed: [
-      'Placeholder',
-      'Placeholder',
-      'Placeholder',
-      'Placeholder',
-      'Placeholder',
+      'Next.js',
+      'TypeScript',
+      'Cloudinary',
+      'Embla',
+      'Tailwind',
+      'EmailJS',
     ],
-    imageSrc: 'https://via.placeholder.com/960x540.png?text=Placeholder',
-    imageAlt: 'placeholder',
+    imageSrc: '/images/ludlow43.png',
+    imageAlt: 'ludlow43 image',
+    ariaLabelGithub: 'Visit GitHub repository to Ludlow43 Rebuilt',
+    ariaLabelWebsite: 'Visit Ludlow43 Rebuilt Website',
   },
   {
-    projectName: 'Placeholder',
+    projectName: 'Personal Portfolio',
     projectDescription:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet dictum sit amet justo donec enim.',
-    projectWebsite: '',
-    projectGithub: '',
+      'This is my first iteration to the website you are currently viewing. Throughout development, I kept in mind to keep everything on a single page for easy access as well as keeping the design friendly and simple. ',
+    projectWebsite: 'https://personal-portfolio-okhdev.vercel.app/',
+    projectGithub: 'https://github.com/OkhDev/personal-portfolio',
     technologiesUsed: [
-      'Placeholder',
-      'Placeholder',
-      'Placeholder',
-      'Placeholder',
-      'Placeholder',
-      'Placeholder',
+      'Next.js',
+      'TypeScript',
+      'Styled Components',
+      'Tailwind',
+      'Framer Motion',
     ],
-    imageSrc: 'https://via.placeholder.com/960x540.png?text=Placeholder',
-    imageAlt: 'placeholder',
+    imageSrc: '/images/personal.png',
+    imageAlt: 'personal portfolio image',
+    ariaLabelGithub: 'Visit GitHub repository to Personal Portfolio',
+    ariaLabelWebsite: 'Visit Personal Portfolio Website',
   },
 ]
 
-// !!! CONTACT COMPONENT
+// !!! CONTACT
 export const ContactTitle = 'Contact Me'
 export const ContactEmail = {
   email: 'aokhtenberg@gmail.com',
-  href: 'mailto:aokhtenberg@gmail.com',
+  href: 'mailto:aokhtenberg@gmail.com?subject=Hey Ariel!',
 }
 export const ContactDescription =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  "I'm always open for new opportunities, so please don't hesitate to email me as my inbox is always open. Whether you have a question or just want to say hi, I will do my best to get back to you!"
 export const ContactNote = ['Estimated reply time:', 'within a day']
+
+// !!! FOOTER
+export const FooterDesc = 'Design & Built by Ariel Okhtenberg'

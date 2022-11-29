@@ -1,19 +1,14 @@
-import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
 import styled from 'styled-components'
 import tw from 'twin.macro'
 
-import Waves from '../Waves/Waves'
-import WavesFlip from '../Waves/WavesFlip'
 import { ProjectsTitle } from '../../constants/index'
 import { InitialSetup, LoadElements } from '../../utils/variants'
 import ProjectsShowcase from './ProjectsShowcase'
 
 const ProjectsSection = styled.section`
-  ${tw`relative flex flex-grow py-24 bg-white md:py-48 lg:py-72`}
-`
-const ScrollTo = styled.span`
-  ${tw`absolute top-0 md:top-20 lg:top-40`}
+  ${tw`relative flex flex-col py-24 bg-white min-h-screen`}
 `
 const ProjectLayout = styled.div`
   ${tw`relative flex flex-col items-center m-auto max-w-7xl`}
@@ -27,20 +22,13 @@ const ProjectHeader = styled(motion.h1)`
 
 function Projects(): JSX.Element {
   const refTitle = useRef(null)
-  const refProjects = useRef(null)
-
   const isInViewTitle = useInView(refTitle, {
-    margin: '0px 0px -200px 0px',
-    once: true,
-  })
-  const isInViewProjects = useInView(refProjects, {
-    margin: '0px 0px -200px 0px',
+    margin: '0px 0px -150px 0px',
     once: true,
   })
 
   return (
-    <ProjectsSection>
-      <ScrollTo id="projects"></ScrollTo>
+    <ProjectsSection id="projects">
       <ProjectLayout>
         <ProjectHeaderSection
           ref={refTitle}
@@ -53,13 +41,8 @@ function Projects(): JSX.Element {
           </ProjectHeader>
         </ProjectHeaderSection>
 
-        <ProjectsShowcase
-          refProjects={refProjects}
-          isInViewProjects={isInViewProjects}
-        />
+        <ProjectsShowcase />
       </ProjectLayout>
-      <WavesFlip />
-      <Waves />
     </ProjectsSection>
   )
 }
